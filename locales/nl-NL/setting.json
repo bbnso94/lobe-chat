@@ -6,6 +6,7 @@
     "chat": "Chatvoorkeur",
     "meta": "Assistentinformatie",
     "modal": "Modelinstellingen",
+    "opening": "Openingsinstellingen",
     "plugin": "Plugin-instellingen",
     "prompt": "Rolinstelling",
     "tts": "Tekst-naar-spraakdienst"
@@ -41,6 +42,17 @@
     "sessionDesc": "Rolinstellingen en sessievoorkeuren.",
     "sessionWithName": "Sessie-instellingen · {{name}}",
     "title": "Instellingen"
+  },
+  "hotkey": {
+    "conflicts": "Conflict met bestaande sneltoetsen",
+    "group": {
+      "conversation": "Gesprek",
+      "essential": "Essentieel"
+    },
+    "invalidCombination": "Sneltoets moet ten minste één modifier-toets (Ctrl, Alt, Shift) en één reguliere toets bevatten",
+    "record": "Druk op een toets om de sneltoets op te nemen",
+    "reset": "Reset naar standaard sneltoetsen",
+    "title": "Sneltoetsen"
   },
   "llm": {
     "aesGcm": "Uw sleutel en proxy-adres zullen worden versleuteld met het <1>AES-GCM</1> encryptie-algoritme",
@@ -84,8 +96,7 @@
         },
         "modalTitle": "Aangepaste modelconfiguratie",
         "tokens": {
-          "title": "Maximaal tokenaantal",
-          "unlimited": "onbeperkt"
+          "title": "Maximaal tokenaantal"
         },
         "vision": {
           "extra": "Deze configuratie zal alleen de mogelijkheid voor het uploaden van afbeeldingen in de applicatie inschakelen. Of herkenning wordt ondersteund, hangt volledig af van het model zelf. Test de beschikbaarheid van visuele herkenning van dit model zelf.",
@@ -139,6 +150,7 @@
       "title": "Achtergrondkleur"
     },
     "description": {
+      "desc": "Een korte introductie van je assistent, niet als karakterinstelling",
       "placeholder": "Voer assistentbeschrijving in",
       "title": "Assistentbeschrijving"
     },
@@ -150,11 +162,27 @@
       "placeholder": "Voer rol Prompt-woord in",
       "title": "Rolinstelling"
     },
+    "submit": "Assistentinformatie bijwerken",
     "tag": {
+      "desc": "Assistentlabels worden weergegeven in de assistentmarkt",
       "placeholder": "Voer tag in",
       "title": "Tag"
     },
     "title": "Assistentinformatie"
+  },
+  "settingAppearance": {
+    "neutralColor": {
+      "desc": "Aangepaste grijstinten met verschillende kleurvoorkeuren",
+      "title": "Neutrale kleur"
+    },
+    "preview": {
+      "title": "Kleurpalet"
+    },
+    "primaryColor": {
+      "desc": "Aangepaste themakleur",
+      "title": "Themakleur"
+    },
+    "title": "Toepassing uiterlijk"
   },
   "settingChat": {
     "autoCreateTopicThreshold": {
@@ -195,15 +223,45 @@
       "placeholder": "Voorbewerkingssjabloon {{text}} wordt vervangen door realtime invoer",
       "title": "Voorbewerking van gebruikersinvoer"
     },
+    "submit": "Chatvoorkeuren bijwerken",
     "title": "Chatinstellingen"
+  },
+  "settingChatAppearance": {
+    "fontSize": {
+      "desc": "De lettergrootte van de chatinhoud",
+      "marks": {
+        "normal": "Standaard"
+      },
+      "title": "Lettergrootte"
+    },
+    "highlighterTheme": {
+      "title": "Code markeer thema"
+    },
+    "mermaidTheme": {
+      "title": "Mermaid-thema"
+    },
+    "title": "Chat uiterlijk"
+  },
+  "settingCommon": {
+    "lang": {
+      "autoMode": "Volg systeem",
+      "title": "Taal"
+    },
+    "themeMode": {
+      "auto": "Automatisch",
+      "dark": "Donker",
+      "light": "Licht",
+      "title": "Thema"
+    },
+    "title": "Algemene instellingen"
   },
   "settingModel": {
     "enableMaxTokens": {
       "title": "Limiet voor enkele reacties inschakelen"
     },
     "frequencyPenalty": {
-      "desc": "Hoe hoger de waarde, hoe waarschijnlijker het is dat herhaalde woorden worden verminderd",
-      "title": "Frequentieboete"
+      "desc": "Hoe hoger de waarde, hoe rijker en gevarieerder de woordkeuze; hoe lager de waarde, hoe eenvoudiger en directer de woordkeuze",
+      "title": "Woordenschat diversiteit"
     },
     "maxTokens": {
       "desc": "Het maximale aantal tokens dat wordt gebruikt voor een enkele interactie",
@@ -213,20 +271,39 @@
       "desc": "{{provider}} model",
       "title": "Model"
     },
-    "presencePenalty": {
-      "desc": "Hoe hoger de waarde, hoe waarschijnlijker het is dat het gesprek naar nieuwe onderwerpen wordt uitgebreid",
-      "title": "Onderwerpnieuwheid"
+    "params": {
+      "title": "Geavanceerde parameters"
     },
+    "presencePenalty": {
+      "desc": "Hoe hoger de waarde, hoe meer de neiging om verschillende uitdrukkingen te gebruiken en herhaling van concepten te vermijden; hoe lager de waarde, hoe meer de neiging om herhalende concepten of verhalen te gebruiken, wat zorgt voor meer consistentie in de uitdrukking",
+      "title": "Uitdrukkingsdiversiteit"
+    },
+    "submit": "Modelinstellingen bijwerken",
     "temperature": {
-      "desc": "Hoe hoger de waarde, hoe willekeuriger de reactie",
-      "title": "Willekeurigheid",
-      "titleWithValue": "Willekeurigheid {{value}}"
+      "desc": "Hoe hoger de waarde, hoe creatiever en fantasierijker het antwoord; hoe lager de waarde, hoe strikter het antwoord.",
+      "title": "Creativiteit Activiteit",
+      "warning": "Een te hoge waarde voor creativiteit activiteit kan leiden tot onleesbare output."
     },
     "title": "Modelinstellingen",
     "topP": {
-      "desc": "Vergelijkbaar met willekeurigheid, maar verander dit niet samen met willekeurigheid",
-      "title": "Top-P-monstername"
+      "desc": "Hoeveel mogelijkheden er in overweging worden genomen; hoe hoger de waarde, hoe meer mogelijke antwoorden worden geaccepteerd; hoe lager de waarde, hoe meer de voorkeur uitgaat naar het meest waarschijnlijke antwoord. Het wordt niet aanbevolen om dit samen met creativiteit activiteit te wijzigen.",
+      "title": "Openheid van Denken"
     }
+  },
+  "settingOpening": {
+    "openingMessage": {
+      "desc": "De openingsboodschap bij het starten van een gesprek, bedoeld om de functies van de assistent voor te stellen",
+      "placeholder": "Hallo, ik ben de aangepaste assistent. Je kunt direct met me beginnen praten of naar de assistentinstellingen gaan om mijn informatie aan te vullen.",
+      "title": "Openingsboodschap"
+    },
+    "openingQuestions": {
+      "desc": "Leidende vragen die worden weergegeven aan het begin van het gesprek",
+      "empty": "Geen vragen beschikbaar",
+      "placeholder": "Voer een vraag in",
+      "repeat": "Vraag bestaat al",
+      "title": "Openingsvragen"
+    },
+    "title": "Openingsinstellingen"
   },
   "settingPlugin": {
     "title": "Plugin-lijst"
@@ -278,6 +355,7 @@
       "desc": "Browser staat voor de native spraakherkenningsservice van de browser",
       "title": "Spraakherkenningsservice"
     },
+    "submit": "Spraakdienst bijwerken",
     "title": "Spraakdienst",
     "tts": "Spraaksynthese-instellingen",
     "ttsService": {
@@ -290,36 +368,32 @@
       "title": "Spraaksynthese stem"
     }
   },
-  "settingTheme": {
-    "avatar": {
-      "title": "Profielfoto"
-    },
-    "fontSize": {
-      "desc": "Lettergrootte van chatberichten",
-      "marks": {
-        "normal": "Normaal"
+  "storage": {
+    "actions": {
+      "export": {
+        "button": "Exporteren",
+        "exportType": {
+          "agent": "Exporteren assistentinstellingen",
+          "agentWithMessage": "Exporteren assistent en berichten",
+          "all": "Exporteren globale instellingen en alle assistentgegevens",
+          "allAgent": "Exporteren alle assistentinstellingen",
+          "allAgentWithMessage": "Exporteren alle assistenten en berichten",
+          "globalSetting": "Exporteren globale instellingen"
+        },
+        "title": "Gegevens exporteren"
       },
-      "title": "Lettergrootte"
+      "import": {
+        "button": "Importeren",
+        "title": "Gegevens importeren"
+      },
+      "title": "Geavanceerde acties"
     },
-    "lang": {
-      "autoMode": "Volg systeem",
-      "title": "Taal"
+    "desc": "Huidig opslaggebruik in de browser",
+    "embeddings": {
+      "used": "Vectoropslag"
     },
-    "neutralColor": {
-      "desc": "Aangepaste grijstinten voor verschillende kleurvoorkeuren",
-      "title": "Neutrale kleur"
-    },
-    "primaryColor": {
-      "desc": "Aangepaste themakleur",
-      "title": "Themakleur"
-    },
-    "themeMode": {
-      "auto": "Automatisch",
-      "dark": "Donker",
-      "light": "Licht",
-      "title": "Thema"
-    },
-    "title": "Thema-instellingen"
+    "title": "Gegevensopslag",
+    "used": "Opslaggebruik"
   },
   "submitAgentModal": {
     "button": "Assistent indienen",
@@ -327,6 +401,12 @@
     "metaMiss": "Vul alstublieft de assistentinformatie in voordat u deze indient. Dit moet de naam, beschrijving en labels bevatten",
     "placeholder": "Voer de identificatie van de assistent in, deze moet uniek zijn, bijvoorbeeld web-ontwikkeling",
     "tooltips": "Delen op de assistentenmarkt"
+  },
+  "submitFooter": {
+    "reset": "Resetten",
+    "submit": "Opslaan",
+    "unSaved": "Onopgeslagen wijzigingen",
+    "unSavedWarning": "Er zijn momenteel onopgeslagen wijzigingen"
   },
   "sync": {
     "device": {
@@ -379,6 +459,7 @@
       "placeholder": "Voer aangepaste prompt in",
       "title": "Aangepaste prompt"
     },
+    "helpInfo": "Wanneer je een nieuwe assistent maakt, worden de standaard assistentinstellingen als standaardwaarden gebruikt.",
     "historyCompress": {
       "label": "Gespreksgeschiedenismodel",
       "modelDesc": "Specificeer het model dat wordt gebruikt voor het comprimeren van gespreksgeschiedenis",
@@ -411,7 +492,10 @@
     "agent": "Standaardassistent",
     "common": "Algemene instellingen",
     "experiment": "Experiment",
+    "hotkey": "Sneltoetsen",
     "llm": "Taalmodel",
+    "provider": "AI-dienstverlener",
+    "storage": "Gegevensopslag",
     "sync": "Cloudsynchronisatie",
     "system-agent": "Systeemassistent",
     "tts": "Spraakdienst"

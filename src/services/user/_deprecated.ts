@@ -16,6 +16,10 @@ export class ClientService implements IUserService {
     this.preferenceStorage = new AsyncLocalStorage('LOBE_PREFERENCE');
   }
 
+  getUserRegistrationDuration = async () => {
+    throw new Error('Method not implemented.');
+  };
+
   async getUserState(): Promise<UserInitializationState> {
     const user = await UserModel.getUser();
     const messageCount = await MessageModel.count();
@@ -32,6 +36,15 @@ export class ClientService implements IUserService {
       userId: user.uuid,
     };
   }
+
+  getUserSSOProviders = async () => {
+    // Account not exist on next-auth in client mode, no need to implement this method
+    return [];
+  };
+
+  unlinkSSOProvider = async () => {
+    // Account not exist on next-auth in client mode, no need to implement this method
+  };
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   updateUserSettings = async (patch: DeepPartial<UserSettings>, _?: any) => {

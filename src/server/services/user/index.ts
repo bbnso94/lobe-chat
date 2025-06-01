@@ -1,9 +1,11 @@
 import { UserJSON } from '@clerk/backend';
 
+import { UserModel } from '@/database/models/user';
 import { serverDB } from '@/database/server';
-import { UserModel } from '@/database/server/models/user';
 import { pino } from '@/libs/logger';
 import { KeyVaultsGateKeeper } from '@/server/modules/KeyVaultsEncrypt';
+import { S3 } from '@/server/modules/S3';
+import { AgentService } from '@/server/services/agent';
 
 export class UserService {
   createUser = async (id: string, params: UserJSON) => {
@@ -40,6 +42,10 @@ export class UserService {
       phone: phone?.phone_number,
       username: params.username,
     });
+
+    // 3. Create an inbox session for the user
+    const agentService = new AgentService(serverDB, id);
+    await agentService.createInbox();
 
     /* ↓ cloud slot ↓ */
 
@@ -89,4 +95,21 @@ export class UserService {
   getUserApiKeys = async (id: string) => {
     return UserModel.getUserApiKeys(serverDB, id, KeyVaultsGateKeeper.getUserKeyVaults);
   };
+
+  getUserAvatar = async (id: string, image: string) => {
+    const s3 = new S3();
+    const s3FileUrl = `user/avatar/${id}/${image}`;
+
+    try{
+      const file = await s3.getFileByteArray(s3FileUrl);
+      if (!file) {
+        return null;
+      }
+      const fileBuffer = Buffer.from(file);
+      return fileBuffer;
+    }
+    catch (error) {
+      pino.error('Failed to get user avatar:', error);
+    }
+  }
 }

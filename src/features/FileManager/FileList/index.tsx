@@ -22,8 +22,8 @@ const useStyles = createStyles(({ css, token, isDarkMode }) => ({
   header: css`
     height: 40px;
     min-height: 40px;
-    color: ${token.colorTextDescription};
     border-block-end: 1px solid ${isDarkMode ? token.colorSplit : rgba(token.colorSplit, 0.06)};
+    color: ${token.colorTextDescription};
   `,
   headerItem: css`
     padding-block: 0;
@@ -90,7 +90,7 @@ const FileList = memo<FileListProps>(({ knowledgeBaseId, category }) => {
           total={data?.length}
           totalFileIds={data?.map((item) => item.id) || []}
         />
-        <Flexbox align={'center'} className={styles.header} horizontal>
+        <Flexbox align={'center'} className={styles.header} horizontal paddingInline={8}>
           <Flexbox className={styles.headerItem} flex={1} style={{ paddingInline: 32 }}>
             {t('FileManager.title.title')}
           </Flexbox>

@@ -44,6 +44,9 @@ export class S3 {
       endpoint: fileEnv.S3_ENDPOINT,
       forcePathStyle: fileEnv.S3_ENABLE_PATH_STYLE,
       region: fileEnv.S3_REGION || DEFAULT_S3_REGION,
+      // refs: https://github.com/lobehub/lobe-chat/pull/5479
+      requestChecksumCalculation: 'WHEN_REQUIRED',
+      responseChecksumValidation: 'WHEN_REQUIRED',
     });
   }
 
@@ -114,6 +117,19 @@ export class S3 {
     return getSignedUrl(this.client, command, {
       expiresIn: expiresIn ?? fileEnv.S3_PREVIEW_URL_EXPIRE_IN,
     });
+  }
+
+  // 添加一个新方法用于上传二进制内容
+  public async uploadBuffer(path: string, buffer: Buffer, contentType?: string) {
+    const command = new PutObjectCommand({
+      ACL: this.setAcl ? 'public-read' : undefined,
+      Body: buffer,
+      Bucket: this.bucket,
+      ContentType: contentType,
+      Key: path,
+    });
+
+    return this.client.send(command);
   }
 
   public async uploadContent(path: string, content: string) {

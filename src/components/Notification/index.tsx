@@ -22,9 +22,10 @@ const useStyles = createStyles(({ css, token, isDarkMode }) => ({
 
     overflow: hidden;
 
-    background: ${token.colorBgContainer};
     border: 1px solid ${token.colorSplit};
     border-radius: 8px;
+
+    background: ${token.colorBgContainer};
     box-shadow: ${token.boxShadowSecondary};
   `,
   mobileContainer: css`
@@ -32,7 +33,8 @@ const useStyles = createStyles(({ css, token, isDarkMode }) => ({
     inset-inline-start: 8px;
   `,
   wrapper: css`
-    background: linear-gradient(
+    background:
+      linear-gradient(
         180deg,
         ${rgba(token.colorBgContainer, 0)},
         ${token.colorBgContainer} ${isDarkMode ? '80' : '140'}px

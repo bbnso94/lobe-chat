@@ -1,6 +1,2956 @@
 [
   {
     "children": {
+      "improvements": ["+ in the welcome message can be clicked to create an assistant."]
+    },
+    "date": "2025-05-31",
+    "version": "1.88.23"
+  },
+  {
+    "children": {
+      "improvements": ["Support 01.ai proxy url."]
+    },
+    "date": "2025-05-31",
+    "version": "1.88.22"
+  },
+  {
+    "children": {
+      "improvements": [
+        "Enhanced reasoning_effort Slider Component, Update Hunyuan models & deepseek-r1-0528."
+      ]
+    },
+    "date": "2025-05-31",
+    "version": "1.88.21"
+  },
+  {
+    "children": {
+      "fixes": ["Agent automatic completion meta not working error."]
+    },
+    "date": "2025-05-31",
+    "version": "1.88.20"
+  },
+  {
+    "children": {
+      "improvements": ["Support Web Search Tools and Beta Header from Anthropic."]
+    },
+    "date": "2025-05-30",
+    "version": "1.88.19"
+  },
+  {
+    "children": {
+      "fixes": [
+        "Close historySummary correctly, Enable thinking output only for supported Gemini thinking models."
+      ]
+    },
+    "date": "2025-05-29",
+    "version": "1.88.18"
+  },
+  {
+    "children": {
+      "improvements": ["Increase the history limit."]
+    },
+    "date": "2025-05-29",
+    "version": "1.88.17"
+  },
+  {
+    "children": {
+      "fixes": ["Cmd + click chat tab not open new tab."],
+      "improvements": ["Update GitHub models."]
+    },
+    "date": "2025-05-29",
+    "version": "1.88.16"
+  },
+  {
+    "children": {
+      "improvements": ["Add fc ability to deepseek-reasoner model."]
+    },
+    "date": "2025-05-29",
+    "version": "1.88.15"
+  },
+  {
+    "children": {
+      "fixes": ["Cant invoke the application after OIDC authorization in Windows 11."]
+    },
+    "date": "2025-05-28",
+    "version": "1.88.14"
+  },
+  {
+    "children": {},
+    "date": "2025-05-27",
+    "version": "1.88.13"
+  },
+  {
+    "children": {
+      "improvements": ["Support adjust thinkingBudget in gemini 2.5 flash."]
+    },
+    "date": "2025-05-27",
+    "version": "1.88.12"
+  },
+  {
+    "children": {
+      "improvements": ["Correct model name SenseChat-5-1202."]
+    },
+    "date": "2025-05-26",
+    "version": "1.88.11"
+  },
+  {
+    "children": {},
+    "date": "2025-05-26",
+    "version": "1.88.10"
+  },
+  {
+    "children": {
+      "fixes": ["Auto sync theme mode in desktop."]
+    },
+    "date": "2025-05-26",
+    "version": "1.88.9"
+  },
+  {
+    "children": {
+      "improvements": ["Allow SliderWithInput to have no input limit."]
+    },
+    "date": "2025-05-26",
+    "version": "1.88.8"
+  },
+  {
+    "children": {
+      "fixes": ["Fix chat header in the desktop."]
+    },
+    "date": "2025-05-26",
+    "version": "1.88.7"
+  },
+  {
+    "children": {
+      "fixes": ["Fix draggable issue with agent header."],
+      "improvements": ["Fix a few typos in the model tooltips."]
+    },
+    "date": "2025-05-25",
+    "version": "1.88.6"
+  },
+  {
+    "children": {
+      "improvements": ["Support share single message."]
+    },
+    "date": "2025-05-25",
+    "version": "1.88.5"
+  },
+  {
+    "children": {
+      "improvements": ["Improve thread flicker when first-time loading."]
+    },
+    "date": "2025-05-25",
+    "version": "1.88.4"
+  },
+  {
+    "children": {
+      "fixes": ["Fix message refresh 401 on desktop."],
+      "improvements": ["Add gemini & hunyuan & Claude models."]
+    },
+    "date": "2025-05-25",
+    "version": "1.88.3"
+  },
+  {
+    "children": {
+      "improvements": ["Add live search support for xAI."]
+    },
+    "date": "2025-05-24",
+    "version": "1.88.2"
+  },
+  {
+    "children": {
+      "fixes": ["User nickName & username selector in desktop."],
+      "improvements": ["Support Gemini 2.5 thought reasoning."]
+    },
+    "date": "2025-05-24",
+    "version": "1.88.1"
+  },
+  {
+    "children": {
+      "features": ["Add claude 4 series."],
+      "fixes": [
+        "Fix missing email field to user, update agent config of client db will override old config."
+      ]
+    },
+    "date": "2025-05-23",
+    "version": "1.88.0"
+  },
+  {
+    "children": {
+      "improvements": ["Resolve InputNumber display overlap issue."]
+    },
+    "date": "2025-05-23",
+    "version": "1.87.9"
+  },
+  {
+    "children": {
+      "fixes": ["'top_p' is not supported with o4-mini, pin zustand version to avoid type error."]
+    },
+    "date": "2025-05-22",
+    "version": "1.87.8"
+  },
+  {
+    "children": {
+      "fixes": ["Bump @lobehub/ui to 2.1.7."]
+    },
+    "date": "2025-05-21",
+    "version": "1.87.7"
+  },
+  {
+    "children": {
+      "improvements": ["Improve tools display."]
+    },
+    "date": "2025-05-21",
+    "version": "1.87.6"
+  },
+  {
+    "children": {
+      "fixes": ["Fix desktop open issue on linux like Fedora42."]
+    },
+    "date": "2025-05-20",
+    "version": "1.87.5"
+  },
+  {
+    "children": {
+      "fixes": ["Supported SenseNova v6 models correctly & update Gemini models."]
+    },
+    "date": "2025-05-18",
+    "version": "1.87.4"
+  },
+  {
+    "children": {
+      "improvements": ["Clean code with new antd api."]
+    },
+    "date": "2025-05-17",
+    "version": "1.87.3"
+  },
+  {
+    "children": {
+      "improvements": ["Support Doubao 1.5 Thinking Vision Pro model."]
+    },
+    "date": "2025-05-16",
+    "version": "1.87.2"
+  },
+  {
+    "children": {
+      "improvements": [
+        "Update internlm model list, add series, update Spark X1 model list & fix build-in search params."
+      ]
+    },
+    "date": "2025-05-16",
+    "version": "1.87.1"
+  },
+  {
+    "children": {
+      "features": ["Support custom language and Mermaid Appearance."],
+      "fixes": ["Fix oidc redirect url."]
+    },
+    "date": "2025-05-16",
+    "version": "1.87.0"
+  },
+  {
+    "children": {
+      "improvements": ["Refactor agent runtime to model runtime."]
+    },
+    "date": "2025-05-15",
+    "version": "1.86.1"
+  },
+  {
+    "children": {
+      "features": ["Add Qiniu Provider."]
+    },
+    "date": "2025-05-15",
+    "version": "1.86.0"
+  },
+  {
+    "children": {
+      "improvements": ["Update electron style on windows."]
+    },
+    "date": "2025-05-14",
+    "version": "1.85.10"
+  },
+  {
+    "children": {
+      "fixes": ["Redirect unauthorized next-auth user to signin page."],
+      "improvements": ["Improve smoothing on completion."]
+    },
+    "date": "2025-05-14",
+    "version": "1.85.9"
+  },
+  {
+    "children": {
+      "fixes": ["Fix config import issue in the desktop version."]
+    },
+    "date": "2025-05-11",
+    "version": "1.85.8"
+  },
+  {
+    "children": {
+      "fixes": ["Fix streamable http url valid and refactor local files to local system."]
+    },
+    "date": "2025-05-11",
+    "version": "1.85.7"
+  },
+  {
+    "children": {},
+    "date": "2025-05-10",
+    "version": "1.85.6"
+  },
+  {
+    "children": {
+      "fixes": ["Fix window close issue and release Window/Linux beta."]
+    },
+    "date": "2025-05-10",
+    "version": "1.85.5"
+  },
+  {
+    "children": {
+      "fixes": ["Fix nothing return when reset the client db."]
+    },
+    "date": "2025-05-10",
+    "version": "1.85.4"
+  },
+  {
+    "children": {
+      "fixes": ["Remove mcp client cache."],
+      "improvements": ["Improve pdf and xlsx file content parser."]
+    },
+    "date": "2025-05-10",
+    "version": "1.85.3"
+  },
+  {
+    "children": {
+      "improvements": ["Upgrade anthropic sdk."]
+    },
+    "date": "2025-05-10",
+    "version": "1.85.2"
+  },
+  {
+    "children": {
+      "improvements": ["Add Qwen3 models for infiniai."]
+    },
+    "date": "2025-05-10",
+    "version": "1.85.1"
+  },
+  {
+    "children": {
+      "features": ["Support upload files direct into chat context."]
+    },
+    "date": "2025-05-09",
+    "version": "1.85.0"
+  },
+  {
+    "children": {
+      "improvements": ["Add reasoning tokens and token usage statistics for Google Gemini."]
+    },
+    "date": "2025-05-09",
+    "version": "1.84.27"
+  },
+  {
+    "children": {
+      "improvements": ["Add qwen3 for ollama."]
+    },
+    "date": "2025-05-08",
+    "version": "1.84.26"
+  },
+  {
+    "children": {
+      "fixes": ["Fix desktop upload image on macOS."]
+    },
+    "date": "2025-05-08",
+    "version": "1.84.25"
+  },
+  {
+    "children": {
+      "fixes": ["Fix changelog issue on desktop app."]
+    },
+    "date": "2025-05-08",
+    "version": "1.84.24"
+  },
+  {
+    "children": {
+      "improvements": ["Add new gemini & Mistral models."]
+    },
+    "date": "2025-05-08",
+    "version": "1.84.23"
+  },
+  {
+    "children": {
+      "fixes": ["Fix electron state init on window."],
+      "improvements": ["Add Xiaohongshu crawler rules."]
+    },
+    "date": "2025-05-07",
+    "version": "1.84.22"
+  },
+  {
+    "children": {
+      "improvements": ["Remove doubao Provider."]
+    },
+    "date": "2025-05-04",
+    "version": "1.84.21"
+  },
+  {
+    "children": {
+      "improvements": ["Show Aliyun Bailian tokens usage tracking."]
+    },
+    "date": "2025-05-04",
+    "version": "1.84.20"
+  },
+  {
+    "children": {
+      "improvements": ["Fix init state of loading."]
+    },
+    "date": "2025-05-04",
+    "version": "1.84.19"
+  },
+  {
+    "children": {
+      "improvements": ["Add perf stat support for openai factory."]
+    },
+    "date": "2025-05-03",
+    "version": "1.84.18"
+  },
+  {
+    "children": {
+      "improvements": ["Add write file tool to local-file plugin."]
+    },
+    "date": "2025-05-03",
+    "version": "1.84.17"
+  },
+  {
+    "children": {
+      "fixes": ["Fix desktop quiting with reopen window."]
+    },
+    "date": "2025-05-02",
+    "version": "1.84.16"
+  },
+  {
+    "children": {
+      "fixes": ["Siliconflow requests with tools no longer force non-streaming."]
+    },
+    "date": "2025-05-01",
+    "version": "1.84.15"
+  },
+  {
+    "children": {
+      "improvements": ["Add windows control and tray."]
+    },
+    "date": "2025-05-01",
+    "version": "1.84.14"
+  },
+  {
+    "children": {
+      "improvements": ["Fix style issues."]
+    },
+    "date": "2025-05-01",
+    "version": "1.84.13"
+  },
+  {
+    "children": {
+      "improvements": ["Support Qwen3 thinking_budget param."]
+    },
+    "date": "2025-04-30",
+    "version": "1.84.12"
+  },
+  {
+    "children": {
+      "improvements": ["Allow copy/edit when generate error."]
+    },
+    "date": "2025-04-30",
+    "version": "1.84.11"
+  },
+  {
+    "children": {
+      "improvements": [
+        "Add Gemini 2.5 Pro Experimental model, Add siliconflow Qwen3 & support thinking params, Arrange model tags neatly, Update mobile style and fix issues problem, update ollama checker."
+      ]
+    },
+    "date": "2025-04-30",
+    "version": "1.84.10"
+  },
+  {
+    "children": {
+      "fixes": ["Embeddings Format Issue with OpenAI API when using Ollama."]
+    },
+    "date": "2025-04-30",
+    "version": "1.84.9"
+  },
+  {
+    "children": {
+      "fixes": ["Fix stdio mcp server env issue."]
+    },
+    "date": "2025-04-29",
+    "version": "1.84.8"
+  },
+  {
+    "children": {
+      "fixes": ["Fix custom provider and knowledge base crash."]
+    },
+    "date": "2025-04-29",
+    "version": "1.84.7"
+  },
+  {
+    "children": {
+      "improvements": ["Fix OpenRouter models config, improve mcp stdio custom field."]
+    },
+    "date": "2025-04-29",
+    "version": "1.84.6"
+  },
+  {
+    "children": {
+      "improvements": ["Add Qwen3 models."]
+    },
+    "date": "2025-04-29",
+    "version": "1.84.5"
+  },
+  {
+    "children": {
+      "improvements": ["Improve stdio mcp server install experience."]
+    },
+    "date": "2025-04-28",
+    "version": "1.84.4"
+  },
+  {
+    "children": {
+      "fixes": [
+        "Fix mcp server stdio spawn ENOENT in electron bundle, Fix mobile agent settings and textarea scroll, Remove gpt-4o-search-preview unsupported parameters."
+      ]
+    },
+    "date": "2025-04-28",
+    "version": "1.84.3"
+  },
+  {
+    "children": {},
+    "date": "2025-04-28",
+    "version": "1.84.2"
+  },
+  {
+    "children": {
+      "improvements": ["Improve hotkey for delete messages."]
+    },
+    "date": "2025-04-28",
+    "version": "1.84.1"
+  },
+  {
+    "children": {
+      "features": ["Upgrade to lobe ui v2 with better design style."]
+    },
+    "date": "2025-04-28",
+    "version": "1.84.0"
+  },
+  {
+    "children": {
+      "fixes": ["Fix cloud data sync."]
+    },
+    "date": "2025-04-28",
+    "version": "1.83.8"
+  },
+  {
+    "children": {
+      "improvements": ["Fix doubao-1-5-thinking-pro-vision endpoint calling."]
+    },
+    "date": "2025-04-27",
+    "version": "1.83.7"
+  },
+  {
+    "children": {
+      "fixes": ["Fix desktop cloud sync issue."]
+    },
+    "date": "2025-04-27",
+    "version": "1.83.6"
+  },
+  {
+    "children": {
+      "fixes": ["Fix desktop beta redirect uris."]
+    },
+    "date": "2025-04-27",
+    "version": "1.83.5"
+  },
+  {
+    "children": {
+      "fixes": ["Fix cloud connection issue."]
+    },
+    "date": "2025-04-27",
+    "version": "1.83.4"
+  },
+  {
+    "children": {},
+    "date": "2025-04-27",
+    "version": "1.83.3"
+  },
+  {
+    "children": {},
+    "date": "2025-04-27",
+    "version": "1.83.2"
+  },
+  {
+    "children": {},
+    "date": "2025-04-27",
+    "version": "1.83.1"
+  },
+  {
+    "children": {
+      "features": ["Support desktop release framework and workflow."]
+    },
+    "date": "2025-04-27",
+    "version": "1.83.0"
+  },
+  {
+    "children": {
+      "improvements": ["Support ernie-x1 & ernie-4.5 series from Wenxin."]
+    },
+    "date": "2025-04-26",
+    "version": "1.82.10"
+  },
+  {
+    "children": {
+      "improvements": ["Improve oidc OAuth workflow."]
+    },
+    "date": "2025-04-26",
+    "version": "1.82.9"
+  },
+  {
+    "children": {
+      "improvements": ["Improve categories selection via SearXNG."],
+      "fixes": ["Fix oidc redirect urls."]
+    },
+    "date": "2025-04-26",
+    "version": "1.82.8"
+  },
+  {
+    "children": {
+      "fixes": ["Pwa-install cause mobile infinity scroll."]
+    },
+    "date": "2025-04-25",
+    "version": "1.82.7"
+  },
+  {
+    "children": {
+      "fixes": ["Improve stability of Cloudflare Workers AI."]
+    },
+    "date": "2025-04-24",
+    "version": "1.82.6"
+  },
+  {
+    "children": {
+      "fixes": ["Countries-and-timezones return invalid timezone."],
+      "improvements": [
+        "Add avatar for server database upload to S3, removing SSO dependency for avatar management."
+      ]
+    },
+    "date": "2025-04-24",
+    "version": "1.82.5"
+  },
+  {
+    "children": {
+      "fixes": ["Fix hydration error."]
+    },
+    "date": "2025-04-24",
+    "version": "1.82.4"
+  },
+  {
+    "children": {
+      "fixes": ["Fix openai tools calling."]
+    },
+    "date": "2025-04-24",
+    "version": "1.82.3"
+  },
+  {
+    "children": {
+      "improvements": ["Improve stdio mcp form, Update the id of some OpenAI models in OpenRouter."]
+    },
+    "date": "2025-04-23",
+    "version": "1.82.2"
+  },
+  {
+    "children": {
+      "improvements": ["Improve mcp server type select and fix refresh mcp manifest issue."]
+    },
+    "date": "2025-04-23",
+    "version": "1.82.1"
+  },
+  {
+    "children": {
+      "features": ["Support Streamable HTTP MCP server."]
+    },
+    "date": "2025-04-22",
+    "version": "1.82.0"
+  },
+  {
+    "children": {
+      "fixes": ["Fix search prompt."]
+    },
+    "date": "2025-04-21",
+    "version": "1.81.9"
+  },
+  {
+    "children": {
+      "improvements": ["Show token generate performance."]
+    },
+    "date": "2025-04-21",
+    "version": "1.81.8"
+  },
+  {
+    "children": {
+      "fixes": ["Together.ai fetch model list."]
+    },
+    "date": "2025-04-21",
+    "version": "1.81.7"
+  },
+  {
+    "children": {
+      "improvements": ["Add hotkey for clear chat messages."]
+    },
+    "date": "2025-04-21",
+    "version": "1.81.6"
+  },
+  {
+    "children": {
+      "fixes": ["Lock nextauth to beta.25."]
+    },
+    "date": "2025-04-20",
+    "version": "1.81.5"
+  },
+  {
+    "children": {
+      "fixes": ["Gemini error Tool use with function calling is unsupported."],
+      "improvements": ["Support update tool calling params and trigger again."]
+    },
+    "date": "2025-04-19",
+    "version": "1.81.4"
+  },
+  {
+    "children": {
+      "improvements": ["Update GitHub & Cloudflare models, Update Google models."]
+    },
+    "date": "2025-04-19",
+    "version": "1.81.3"
+  },
+  {
+    "children": {
+      "improvements": ["Allow folding SystemRole box."]
+    },
+    "date": "2025-04-18",
+    "version": "1.81.2"
+  },
+  {
+    "children": {
+      "improvements": ["Add SenseNova-V6 series & SenseChat-Vision support."]
+    },
+    "date": "2025-04-18",
+    "version": "1.81.1"
+  },
+  {
+    "children": {
+      "features": ["Support search1api as search provider."]
+    },
+    "date": "2025-04-17",
+    "version": "1.81.0"
+  },
+  {
+    "children": {
+      "improvements": ["Update 360 AI & Taichu & AI21 model list."]
+    },
+    "date": "2025-04-17",
+    "version": "1.80.5"
+  },
+  {
+    "children": {
+      "improvements": ["Add o3/o4-mini models."]
+    },
+    "date": "2025-04-17",
+    "version": "1.80.4"
+  },
+  {
+    "children": {
+      "improvements": ["Refactor to get user info from api."]
+    },
+    "date": "2025-04-16",
+    "version": "1.80.3"
+  },
+  {
+    "children": {
+      "fixes": ["Update default file embedding model info."]
+    },
+    "date": "2025-04-16",
+    "version": "1.80.2"
+  },
+  {
+    "children": {
+      "fixes": ["Fix model support file and image logic."],
+      "improvements": ["Add step-r1 & glm-z1 model fetch support."]
+    },
+    "date": "2025-04-16",
+    "version": "1.80.1"
+  },
+  {
+    "children": {
+      "improvements": ["Opening message container add border."],
+      "features": [
+        "Opening settings copyright i18n, regenerate migrate sql for new agent opening settings."
+      ],
+      "fixes": [
+        "Opening questions should should be hidden when no setted, opening settings migration type error."
+      ]
+    },
+    "date": "2025-04-16",
+    "version": "1.80.0"
+  },
+  {
+    "children": {
+      "improvements": ["Make gpt-4.1-mini default model."]
+    },
+    "date": "2025-04-15",
+    "version": "1.79.10"
+  },
+  {
+    "children": {
+      "improvements": ["Add GPT-4.1 models."]
+    },
+    "date": "2025-04-15",
+    "version": "1.79.9"
+  },
+  {
+    "children": {
+      "fixes": ["Fix Azure OpenAI unable to process image messages in local s3."]
+    },
+    "date": "2025-04-12",
+    "version": "1.79.8"
+  },
+  {
+    "children": {
+      "improvements": ["Refactor hotkey import to avoid db generate error."]
+    },
+    "date": "2025-04-11",
+    "version": "1.79.7"
+  },
+  {
+    "children": {
+      "fixes": ["Fix grok-3-mini series calling."]
+    },
+    "date": "2025-04-11",
+    "version": "1.79.6"
+  },
+  {
+    "children": {
+      "fixes": ["Fix langfuse intergation."]
+    },
+    "date": "2025-04-10",
+    "version": "1.79.5"
+  },
+  {
+    "children": {
+      "improvements": ["Update Grok 3 models."]
+    },
+    "date": "2025-04-10",
+    "version": "1.79.4"
+  },
+  {
+    "children": {
+      "fixes": ["Remove Azure AI o3-mini unsupported parameters."]
+    },
+    "date": "2025-04-10",
+    "version": "1.79.3"
+  },
+  {
+    "children": {
+      "fixes": ["Fix env for Tencent Cloud & remove deepseek-v3 series fc tag."]
+    },
+    "date": "2025-04-09",
+    "version": "1.79.2"
+  },
+  {
+    "children": {
+      "fixes": ["Fix xAI API calling, not support stream_options."]
+    },
+    "date": "2025-04-09",
+    "version": "1.79.1"
+  },
+  {
+    "children": {
+      "features": ["Add wiki migrate instructions."]
+    },
+    "date": "2025-04-09",
+    "version": "1.79.0"
+  },
+  {
+    "children": {
+      "features": ["Add Keycloak SSO provider support."]
+    },
+    "date": "2025-04-09",
+    "version": "1.78.0"
+  },
+  {
+    "children": {
+      "improvements": ["Add time_range & categories support for SearXNG."]
+    },
+    "date": "2025-04-09",
+    "version": "1.77.18"
+  },
+  {
+    "children": {
+      "fixes": ["Refactor ollama pull flow and model service."]
+    },
+    "date": "2025-04-08",
+    "version": "1.77.17"
+  },
+  {
+    "children": {
+      "improvements": ["Refactor the file service."]
+    },
+    "date": "2025-04-06",
+    "version": "1.77.16"
+  },
+  {
+    "children": {
+      "improvements": ["Improve public procedure implement."]
+    },
+    "date": "2025-04-06",
+    "version": "1.77.15"
+  },
+  {
+    "children": {
+      "improvements": ["Add ernie-x1-32k-preview support for Wenxin."]
+    },
+    "date": "2025-04-06",
+    "version": "1.77.14"
+  },
+  {
+    "children": {
+      "fixes": ["Fix data not show correctly in 1.77.11."]
+    },
+    "date": "2025-04-06",
+    "version": "1.77.13"
+  },
+  {
+    "children": {
+      "improvements": [
+        "Fix QVQ Max model, support default config for system agent and pre-merge some desktop code."
+      ]
+    },
+    "date": "2025-04-06",
+    "version": "1.77.12"
+  },
+  {
+    "children": {
+      "fixes": ["Fix fetch issue in offline mode and make jina crawler first."]
+    },
+    "date": "2025-04-04",
+    "version": "1.77.11"
+  },
+  {
+    "children": {},
+    "date": "2025-04-03",
+    "version": "1.77.10"
+  },
+  {
+    "children": {
+      "improvements": ["Add QVQ-Max model."]
+    },
+    "date": "2025-04-03",
+    "version": "1.77.9"
+  },
+  {
+    "children": {
+      "fixes": ["Add SEARCH1API_CRAWL_API_KEY env."],
+      "improvements": ["Auto refresh TokenTag count."]
+    },
+    "date": "2025-04-03",
+    "version": "1.77.8"
+  },
+  {
+    "children": {
+      "improvements": ["Add desktop-release workflow and improve code."]
+    },
+    "date": "2025-04-03",
+    "version": "1.77.7"
+  },
+  {
+    "children": {
+      "improvements": ["Refactor the db to context inject mode."]
+    },
+    "date": "2025-04-01",
+    "version": "1.77.6"
+  },
+  {
+    "children": {},
+    "date": "2025-04-01",
+    "version": "1.77.5"
+  },
+  {
+    "children": {
+      "improvements": ["Update branding."]
+    },
+    "date": "2025-03-31",
+    "version": "1.77.4"
+  },
+  {
+    "children": {
+      "improvements": ["Move general db models to database folder."]
+    },
+    "date": "2025-03-29",
+    "version": "1.77.3"
+  },
+  {
+    "children": {
+      "fixes": ["Fix decrypt error with imported pg data."]
+    },
+    "date": "2025-03-29",
+    "version": "1.77.2"
+  },
+  {
+    "children": {
+      "fixes": ["Fix export button and clean orphan agent."]
+    },
+    "date": "2025-03-29",
+    "version": "1.77.1"
+  },
+  {
+    "children": {
+      "features": ["Support pglite and postgres data export."]
+    },
+    "date": "2025-03-29",
+    "version": "1.77.0"
+  },
+  {
+    "children": {
+      "improvements": ["Supports OpenAI's latest voice model gpt-4o-mini-tts."]
+    },
+    "date": "2025-03-29",
+    "version": "1.76.1"
+  },
+  {
+    "children": {
+      "features": ["Add Hotkey Settings."]
+    },
+    "date": "2025-03-28",
+    "version": "1.76.0"
+  },
+  {
+    "children": {
+      "improvements": [
+        "Add tencentcloud deepseek-v3-0324, support for parsing imageOutput, update models for siliconcloud & infiniai."
+      ]
+    },
+    "date": "2025-03-28",
+    "version": "1.75.5"
+  },
+  {
+    "children": {
+      "improvements": ["Update models info."]
+    },
+    "date": "2025-03-27",
+    "version": "1.75.4"
+  },
+  {
+    "children": {
+      "fixes": ["Fix anthropic import issue."]
+    },
+    "date": "2025-03-26",
+    "version": "1.75.3"
+  },
+  {
+    "children": {
+      "fixes": ["Update 'gemini-2.5-pro-exp-03-25' maxOutput and contextWindowTokens."]
+    },
+    "date": "2025-03-26",
+    "version": "1.75.2"
+  },
+  {
+    "children": {
+      "improvements": ["Update siliconcloud models."]
+    },
+    "date": "2025-03-26",
+    "version": "1.75.1"
+  },
+  {
+    "children": {
+      "features": [
+        "Add reasoning content selector and update AutoScroll component, add Xinference provider support."
+      ],
+      "improvements": ["Add Gemini 2.5 Pro Experimental model, improve editing scroll experience."]
+    },
+    "date": "2025-03-26",
+    "version": "1.75.0"
+  },
+  {
+    "children": {
+      "improvements": ["Upgrade styles for Drawer."]
+    },
+    "date": "2025-03-25",
+    "version": "1.74.11"
+  },
+  {
+    "children": {
+      "improvements": ["Add hunyuan-t1-latest from Hunyuan."]
+    },
+    "date": "2025-03-25",
+    "version": "1.74.10"
+  },
+  {
+    "children": {
+      "improvements": ["Add reject pattern for browserless to boost crawl performance."]
+    },
+    "date": "2025-03-25",
+    "version": "1.74.9"
+  },
+  {
+    "children": {
+      "fixes": ["Update create message loading issue."]
+    },
+    "date": "2025-03-24",
+    "version": "1.74.8"
+  },
+  {
+    "children": {
+      "fixes": ["Remove Tooltip component in Topic in mobile mode."]
+    },
+    "date": "2025-03-24",
+    "version": "1.74.7"
+  },
+  {
+    "children": {
+      "fixes": ["Set max_completion_tokens to undefined for Azure OpenAI."]
+    },
+    "date": "2025-03-24",
+    "version": "1.74.6"
+  },
+  {
+    "children": {
+      "fixes": ["Fix wechat login error with next-auth."]
+    },
+    "date": "2025-03-23",
+    "version": "1.74.5"
+  },
+  {
+    "children": {
+      "fixes": ["Upgrade next to 15.2.3 to fix CVE-2025-29927."]
+    },
+    "date": "2025-03-23",
+    "version": "1.74.4"
+  },
+  {
+    "children": {
+      "improvements": ["Clear previous model check result."]
+    },
+    "date": "2025-03-22",
+    "version": "1.74.3"
+  },
+  {
+    "children": {
+      "fixes": ["CheckModel change clears other configs, update input and output prices."]
+    },
+    "date": "2025-03-22",
+    "version": "1.74.2"
+  },
+  {
+    "children": {
+      "improvements": ["Fix deepseek-r1-70b-online search tag missing from Search1API."]
+    },
+    "date": "2025-03-22",
+    "version": "1.74.1"
+  },
+  {
+    "children": {
+      "features": [
+        "Add infini-ai provider, add Search1API provider with web search DeepSeek models."
+      ]
+    },
+    "date": "2025-03-21",
+    "version": "1.74.0"
+  },
+  {
+    "children": {
+      "fixes": ["Fix agent chatConfig override issue."]
+    },
+    "date": "2025-03-21",
+    "version": "1.73.2"
+  },
+  {
+    "children": {
+      "improvements": ["Update shiki to v3."]
+    },
+    "date": "2025-03-21",
+    "version": "1.73.1"
+  },
+  {
+    "children": {
+      "features": [
+        "Add Cohere provider support, add search1api crawler implementation for WeChat Sogou links."
+      ]
+    },
+    "date": "2025-03-19",
+    "version": "1.73.0"
+  },
+  {
+    "children": {
+      "fixes": ["Allow historyCount to be set to 0."]
+    },
+    "date": "2025-03-19",
+    "version": "1.72.1"
+  },
+  {
+    "children": {
+      "features": ["Update db schema to add user_id for data export."]
+    },
+    "date": "2025-03-18",
+    "version": "1.72.0"
+  },
+  {
+    "children": {
+      "improvements": ["Support screenshot to clipboard when sharing."]
+    },
+    "date": "2025-03-17",
+    "version": "1.71.5"
+  },
+  {
+    "children": {
+      "improvements": ["Update Wenxin & Hunyuan model list."]
+    },
+    "date": "2025-03-17",
+    "version": "1.71.4"
+  },
+  {
+    "children": {
+      "fixes": ["Fix claude 3.5+ models context max output."]
+    },
+    "date": "2025-03-15",
+    "version": "1.71.3"
+  },
+  {
+    "children": {
+      "fixes": ["Fix knowledge base issue."]
+    },
+    "date": "2025-03-15",
+    "version": "1.71.2"
+  },
+  {
+    "children": {
+      "fixes": ["Fix google gemini output relative issue."],
+      "improvements": ["Update Vertex AI models."]
+    },
+    "date": "2025-03-15",
+    "version": "1.71.1"
+  },
+  {
+    "children": {
+      "features": ["Support gemini image output in chat."]
+    },
+    "date": "2025-03-14",
+    "version": "1.71.0"
+  },
+  {
+    "children": {},
+    "date": "2025-03-13",
+    "version": "1.70.11"
+  },
+  {
+    "children": {
+      "fixes": ["The agent setting -edit_agent not work."]
+    },
+    "date": "2025-03-12",
+    "version": "1.70.10"
+  },
+  {
+    "children": {},
+    "date": "2025-03-12",
+    "version": "1.70.9"
+  },
+  {
+    "children": {
+      "fixes": ["Fix theme flicking."]
+    },
+    "date": "2025-03-12",
+    "version": "1.70.8"
+  },
+  {
+    "children": {
+      "fixes": ["Fix crawl result for short content."]
+    },
+    "date": "2025-03-12",
+    "version": "1.70.7"
+  },
+  {
+    "children": {
+      "fixes": ["Link jump in mobile terminal data statistics."]
+    },
+    "date": "2025-03-11",
+    "version": "1.70.6"
+  },
+  {
+    "children": {
+      "fixes": ["Refactor the theme implement."]
+    },
+    "date": "2025-03-11",
+    "version": "1.70.5"
+  },
+  {
+    "children": {
+      "improvements": ["Support OpenRouter custom BaseURL."]
+    },
+    "date": "2025-03-11",
+    "version": "1.70.4"
+  },
+  {
+    "children": {},
+    "date": "2025-03-11",
+    "version": "1.70.3"
+  },
+  {
+    "children": {
+      "fixes": ["Update cvpr cvf url rules."]
+    },
+    "date": "2025-03-10",
+    "version": "1.70.2"
+  },
+  {
+    "children": {
+      "fixes": ["Fix anthropic max tokens."]
+    },
+    "date": "2025-03-10",
+    "version": "1.70.1"
+  },
+  {
+    "children": {
+      "features": ["Support no-fc models like deepseek r1 with online search."]
+    },
+    "date": "2025-03-09",
+    "version": "1.70.0"
+  },
+  {
+    "children": {
+      "fixes": ["Fix context cache control and model builtin search switch."]
+    },
+    "date": "2025-03-09",
+    "version": "1.69.6"
+  },
+  {
+    "children": {
+      "improvements": ["Support openrouter claude 3.7 sonnet reasoning."]
+    },
+    "date": "2025-03-09",
+    "version": "1.69.5"
+  },
+  {
+    "children": {
+      "fixes": ["Fix mistral can not chat."]
+    },
+    "date": "2025-03-09",
+    "version": "1.69.4"
+  },
+  {
+    "children": {
+      "improvements": ["Add login ui for next-auth."]
+    },
+    "date": "2025-03-08",
+    "version": "1.69.3"
+  },
+  {
+    "children": {
+      "improvements": ["Refactor the agent runtime implement."]
+    },
+    "date": "2025-03-07",
+    "version": "1.69.2"
+  },
+  {
+    "children": {
+      "improvements": ["Add Qwen QwQ model."]
+    },
+    "date": "2025-03-07",
+    "version": "1.69.1"
+  },
+  {
+    "children": {
+      "features": ["Support Anthropic Context Caching."]
+    },
+    "date": "2025-03-07",
+    "version": "1.69.0"
+  },
+  {
+    "children": {
+      "improvements": ["Add Gemini 2.0 Flash model variations, add QwQ models."]
+    },
+    "date": "2025-03-07",
+    "version": "1.68.11"
+  },
+  {
+    "children": {
+      "fixes": ["Fix litellm streaming usage and refactor the usage chunk."]
+    },
+    "date": "2025-03-06",
+    "version": "1.68.10"
+  },
+  {
+    "children": {
+      "improvements": ["Add epub file chunk split support."]
+    },
+    "date": "2025-03-05",
+    "version": "1.68.9"
+  },
+  {
+    "children": {
+      "improvements": ["Improve openrouter models info."]
+    },
+    "date": "2025-03-05",
+    "version": "1.68.8"
+  },
+  {
+    "children": {
+      "improvements": ["Refactor agent runtime to better code format."]
+    },
+    "date": "2025-03-05",
+    "version": "1.68.7"
+  },
+  {
+    "children": {
+      "fixes": ["Fix custom ai provider sdk type."]
+    },
+    "date": "2025-03-05",
+    "version": "1.68.6"
+  },
+  {
+    "children": {
+      "improvements": ["Fix provider order."]
+    },
+    "date": "2025-03-04",
+    "version": "1.68.5"
+  },
+  {
+    "children": {
+      "improvements": ["Support to show token usages."]
+    },
+    "date": "2025-03-04",
+    "version": "1.68.4"
+  },
+  {
+    "children": {
+      "fixes": ["Improve url rules."]
+    },
+    "date": "2025-03-03",
+    "version": "1.68.3"
+  },
+  {
+    "children": {
+      "improvements": ["Add build-in web search support for Wenxin & Hunyuan."]
+    },
+    "date": "2025-03-03",
+    "version": "1.68.2"
+  },
+  {
+    "children": {
+      "fixes": ["Fix page crash with crawler error."]
+    },
+    "date": "2025-03-03",
+    "version": "1.68.1"
+  },
+  {
+    "children": {
+      "features": ["Add new model provider PPIO."],
+      "fixes": ["Fix search web-browsing display bug."]
+    },
+    "date": "2025-03-03",
+    "version": "1.68.0"
+  },
+  {
+    "children": {
+      "fixes": ["Improve some crawl case."]
+    },
+    "date": "2025-03-02",
+    "version": "1.67.2"
+  },
+  {
+    "children": {},
+    "date": "2025-03-02",
+    "version": "1.67.1"
+  },
+  {
+    "children": {
+      "features": ["Support web page crawl in the search."]
+    },
+    "date": "2025-03-02",
+    "version": "1.67.0"
+  },
+  {
+    "children": {
+      "improvements": ["Add gpt-4.5-preview for OpenAI."]
+    },
+    "date": "2025-03-02",
+    "version": "1.66.6"
+  },
+  {
+    "children": {
+      "improvements": ["Improve portal style."]
+    },
+    "date": "2025-02-28",
+    "version": "1.66.5"
+  },
+  {
+    "children": {
+      "improvements": ["Optimize smooth output."]
+    },
+    "date": "2025-02-28",
+    "version": "1.66.4"
+  },
+  {
+    "children": {
+      "fixes": ["Fix fetch assistants plugin error."]
+    },
+    "date": "2025-02-27",
+    "version": "1.66.3"
+  },
+  {
+    "children": {
+      "fixes": ["Update Claude sonnet 3.7 model ID."]
+    },
+    "date": "2025-02-27",
+    "version": "1.66.2"
+  },
+  {
+    "children": {
+      "improvements": ["Added eu-central-1 region for bedrock."]
+    },
+    "date": "2025-02-27",
+    "version": "1.66.1"
+  },
+  {
+    "children": {
+      "features": ["Add online search support for available providers."]
+    },
+    "date": "2025-02-27",
+    "version": "1.66.0"
+  },
+  {
+    "children": {
+      "improvements": [
+        "Support parsing the search flag when parsing the model list, Update Gemini & Qwen models."
+      ]
+    },
+    "date": "2025-02-27",
+    "version": "1.65.2"
+  },
+  {
+    "children": {
+      "fixes": ["Fix claude 3.7 sonnet thinking with tool use."]
+    },
+    "date": "2025-02-26",
+    "version": "1.65.1"
+  },
+  {
+    "children": {
+      "features": ["Support claude sonnet 3.7 thinking."],
+      "improvements": ["Update Gemini 2.0 search settings."]
+    },
+    "date": "2025-02-25",
+    "version": "1.65.0"
+  },
+  {
+    "children": {
+      "improvements": ["Add Claude 3.7 Sonnet and Haiku 3.5."]
+    },
+    "date": "2025-02-25",
+    "version": "1.64.3"
+  },
+  {
+    "children": {
+      "fixes": ["Fix 0 search results with specific search engine."]
+    },
+    "date": "2025-02-25",
+    "version": "1.64.2"
+  },
+  {
+    "children": {
+      "fixes": ["Disable fc for ds-v3 series."]
+    },
+    "date": "2025-02-25",
+    "version": "1.64.1"
+  },
+  {
+    "children": {
+      "features": ["Support application search with searchXNG."]
+    },
+    "date": "2025-02-24",
+    "version": "1.64.0"
+  },
+  {
+    "children": {
+      "fixes": ["Fix citation=null issue in stream."]
+    },
+    "date": "2025-02-24",
+    "version": "1.63.3"
+  },
+  {
+    "children": {
+      "fixes": ["Fix model settings config."]
+    },
+    "date": "2025-02-24",
+    "version": "1.63.2"
+  },
+  {
+    "children": {
+      "fixes": ["Fix groq location request."],
+      "improvements": ["Improve plugin calling style."]
+    },
+    "date": "2025-02-23",
+    "version": "1.63.1"
+  },
+  {
+    "children": {
+      "features": ["Support model-level search for Google/Qwen."],
+      "improvements": ["Update many models info."]
+    },
+    "date": "2025-02-23",
+    "version": "1.63.0"
+  },
+  {
+    "children": {
+      "fixes": ["Refine role assignment logic for specific Azure OpenAI models & Sensitive URL."],
+      "improvements": ["Add custom proxyUrl support for Volcengine."]
+    },
+    "date": "2025-02-23",
+    "version": "1.62.11"
+  },
+  {
+    "children": {
+      "fixes": ["Fix fetch on client check status display."]
+    },
+    "date": "2025-02-22",
+    "version": "1.62.10"
+  },
+  {
+    "children": {
+      "fixes": ["Next-auth user id not found in create agent index."]
+    },
+    "date": "2025-02-22",
+    "version": "1.62.9"
+  },
+  {
+    "children": {
+      "fixes": ["Fix image prompts with some user cases."]
+    },
+    "date": "2025-02-22",
+    "version": "1.62.8"
+  },
+  {
+    "children": {
+      "improvements": ["Add Volcano Ark models."]
+    },
+    "date": "2025-02-21",
+    "version": "1.62.7"
+  },
+  {
+    "children": {
+      "improvements": ["Refactor the plugin render style."]
+    },
+    "date": "2025-02-21",
+    "version": "1.62.6"
+  },
+  {
+    "children": {
+      "fixes": ["Fix default agent loading."]
+    },
+    "date": "2025-02-21",
+    "version": "1.62.5"
+  },
+  {
+    "children": {
+      "fixes": ["Fix hotkeys of open agent settings."],
+      "improvements": ["Add some error types."]
+    },
+    "date": "2025-02-20",
+    "version": "1.62.4"
+  },
+  {
+    "children": {
+      "fixes": ["Fix a feature flag."]
+    },
+    "date": "2025-02-20",
+    "version": "1.62.3"
+  },
+  {
+    "children": {
+      "fixes": ["Fix message roles for specific Azure OpenAI models."]
+    },
+    "date": "2025-02-20",
+    "version": "1.62.2"
+  },
+  {
+    "children": {
+      "fixes": ["Add sambanova proxy url."]
+    },
+    "date": "2025-02-20",
+    "version": "1.62.1"
+  },
+  {
+    "children": {
+      "features": ["Support pplx search grounding."],
+      "fixes": ["Azure AI env var configuration issue.."]
+    },
+    "date": "2025-02-20",
+    "version": "1.62.0"
+  },
+  {
+    "children": {
+      "fixes": ["Casdoor webhooks error."]
+    },
+    "date": "2025-02-20",
+    "version": "1.61.6"
+  },
+  {
+    "children": {
+      "improvements": ["Show sso providers for next-auth in profile page."]
+    },
+    "date": "2025-02-19",
+    "version": "1.61.5"
+  },
+  {
+    "children": {
+      "improvements": ["Improve perplexity models."]
+    },
+    "date": "2025-02-18",
+    "version": "1.61.4"
+  },
+  {
+    "children": {
+      "improvements": ["Improve error content and console error."]
+    },
+    "date": "2025-02-18",
+    "version": "1.61.3"
+  },
+  {
+    "children": {
+      "improvements": ["Add kimi-latest for Moonshot."]
+    },
+    "date": "2025-02-18",
+    "version": "1.61.2"
+  },
+  {
+    "children": {
+      "improvements": ["Improve serveral error code."]
+    },
+    "date": "2025-02-18",
+    "version": "1.61.1"
+  },
+  {
+    "children": {
+      "features": ["Support google vertex ai as a new provider."],
+      "fixes": ["Try to fix pglite worker."]
+    },
+    "date": "2025-02-18",
+    "version": "1.61.0"
+  },
+  {
+    "children": {},
+    "date": "2025-02-18",
+    "version": "1.60.9"
+  },
+  {
+    "children": {
+      "improvements": ["Sync chat limit."]
+    },
+    "date": "2025-02-18",
+    "version": "1.60.8"
+  },
+  {
+    "children": {
+      "improvements": ["Remove deprecated gemini models, update MiniMax models."]
+    },
+    "date": "2025-02-17",
+    "version": "1.60.7"
+  },
+  {
+    "children": {
+      "improvements": ["Add o1 vision metadata."]
+    },
+    "date": "2025-02-17",
+    "version": "1.60.6"
+  },
+  {
+    "children": {
+      "fixes": ["Fix loading on not login for db."]
+    },
+    "date": "2025-02-17",
+    "version": "1.60.5"
+  },
+  {
+    "children": {
+      "fixes": ["Fix agent config not load correctly."]
+    },
+    "date": "2025-02-17",
+    "version": "1.60.4"
+  },
+  {
+    "children": {
+      "fixes": ["User feedback for empty/long group names in create/edit group modals."]
+    },
+    "date": "2025-02-17",
+    "version": "1.60.3"
+  },
+  {
+    "children": {
+      "fixes": ["Fix model list issue in client mode."]
+    },
+    "date": "2025-02-17",
+    "version": "1.60.2"
+  },
+  {
+    "children": {
+      "improvements": ["Update Jina AI Provider name & model info."]
+    },
+    "date": "2025-02-17",
+    "version": "1.60.1"
+  },
+  {
+    "children": {
+      "features": ["Add SambaNova provider support."]
+    },
+    "date": "2025-02-17",
+    "version": "1.60.0"
+  },
+  {
+    "children": {
+      "features": ["Add volcengine as a new provider."]
+    },
+    "date": "2025-02-16",
+    "version": "1.59.0"
+  },
+  {
+    "children": {
+      "features": ["Add Azure AI as new Provider."]
+    },
+    "date": "2025-02-16",
+    "version": "1.58.0"
+  },
+  {
+    "children": {
+      "improvements": ["Fix mobile agent settings not show correctly."]
+    },
+    "date": "2025-02-16",
+    "version": "1.57.1"
+  },
+  {
+    "children": {
+      "features": ["Add Jina AI model provider support."]
+    },
+    "date": "2025-02-16",
+    "version": "1.57.0"
+  },
+  {
+    "children": {
+      "fixes": [
+        "Match o1 series models more robust in Azure OpenAI provider, set max_completion_tokens to null for Azure OpenAI."
+      ]
+    },
+    "date": "2025-02-16",
+    "version": "1.56.5"
+  },
+  {
+    "children": {
+      "fixes": ["Fix ai provider description not show correctly."]
+    },
+    "date": "2025-02-16",
+    "version": "1.56.4"
+  },
+  {
+    "children": {
+      "improvements": ["Improve inbox agent settings."]
+    },
+    "date": "2025-02-16",
+    "version": "1.56.3"
+  },
+  {
+    "children": {
+      "fixes": ["Fix inbox agent can not save config."]
+    },
+    "date": "2025-02-16",
+    "version": "1.56.2"
+  },
+  {
+    "children": {
+      "fixes": ["Fix inbox agent edit way in the new mode."]
+    },
+    "date": "2025-02-16",
+    "version": "1.56.1"
+  },
+  {
+    "children": {
+      "features": ["Add configurable PDF processing method with Unstructured."]
+    },
+    "date": "2025-02-15",
+    "version": "1.56.0"
+  },
+  {
+    "children": {
+      "improvements": ["Improve mobile params style."]
+    },
+    "date": "2025-02-15",
+    "version": "1.55.4"
+  },
+  {
+    "children": {
+      "improvements": ["Add deepseek r1 distill models for qwen series."]
+    },
+    "date": "2025-02-15",
+    "version": "1.55.3"
+  },
+  {
+    "children": {
+      "fixes": ["Avoid blank reasoning with OpenRouter."]
+    },
+    "date": "2025-02-15",
+    "version": "1.55.2"
+  },
+  {
+    "children": {
+      "fixes": ["Fix Azure OpenAI O1 models and refactor the Azure OpenAI implement."],
+      "improvements": ["Update openrouter model list and descriptions."]
+    },
+    "date": "2025-02-15",
+    "version": "1.55.1"
+  },
+  {
+    "children": {
+      "features": ["Add vLLM provider support."]
+    },
+    "date": "2025-02-14",
+    "version": "1.55.0"
+  },
+  {
+    "children": {
+      "features": ["Add Nvidia NIM provider support."],
+      "improvements": ["Improve advanced params settings."]
+    },
+    "date": "2025-02-14",
+    "version": "1.54.0"
+  },
+  {
+    "children": {
+      "improvements": ["Improve model fetch behavior."]
+    },
+    "date": "2025-02-14",
+    "version": "1.53.12"
+  },
+  {
+    "children": {
+      "fixes": ["Fix provider form api key."]
+    },
+    "date": "2025-02-13",
+    "version": "1.53.11"
+  },
+  {
+    "children": {
+      "fixes": ["Fix api key input issue."]
+    },
+    "date": "2025-02-13",
+    "version": "1.53.10"
+  },
+  {
+    "children": {
+      "improvements": ["Support select check models."]
+    },
+    "date": "2025-02-13",
+    "version": "1.53.9"
+  },
+  {
+    "children": {
+      "fixes": ["Fix model fetch for spark and fix the support of model reset."]
+    },
+    "date": "2025-02-13",
+    "version": "1.53.8"
+  },
+  {
+    "children": {
+      "improvements": ["Update model list."]
+    },
+    "date": "2025-02-13",
+    "version": "1.53.7"
+  },
+  {
+    "children": {
+      "fixes": ["Fix not enable models correctly."]
+    },
+    "date": "2025-02-13",
+    "version": "1.53.6"
+  },
+  {
+    "children": {
+      "fixes": ["Fix latex in thinking tag render."]
+    },
+    "date": "2025-02-13",
+    "version": "1.53.5"
+  },
+  {
+    "children": {
+      "fixes": ["Fix ai model abilities issue."]
+    },
+    "date": "2025-02-12",
+    "version": "1.53.4"
+  },
+  {
+    "children": {
+      "fixes": ["Fix tencent cloud api issue."]
+    },
+    "date": "2025-02-12",
+    "version": "1.53.3"
+  },
+  {
+    "children": {
+      "fixes": ["Disable openrouter client fetch."]
+    },
+    "date": "2025-02-12",
+    "version": "1.53.2"
+  },
+  {
+    "children": {
+      "fixes": ["Fix reasoning output for OpenRouter reasoning models like deepseek-r1."]
+    },
+    "date": "2025-02-12",
+    "version": "1.53.1"
+  },
+  {
+    "children": {
+      "features": ["Support tencent cloud provider."],
+      "improvements": ["Update i18n, update provider i18n."]
+    },
+    "date": "2025-02-11",
+    "version": "1.53.0"
+  },
+  {
+    "children": {
+      "improvements": ["Refactor the agent runtime test case."]
+    },
+    "date": "2025-02-11",
+    "version": "1.52.19"
+  },
+  {
+    "children": {},
+    "date": "2025-02-11",
+    "version": "1.52.18"
+  },
+  {
+    "children": {},
+    "date": "2025-02-11",
+    "version": "1.52.17"
+  },
+  {
+    "children": {
+      "improvements": ["Support mistral proxy url."]
+    },
+    "date": "2025-02-11",
+    "version": "1.52.16"
+  },
+  {
+    "children": {
+      "fixes": ["Fix lmstudio baseURL."],
+      "improvements": ["Optimized MaxToken Slider."]
+    },
+    "date": "2025-02-10",
+    "version": "1.52.15"
+  },
+  {
+    "children": {
+      "improvements": ["Refactor agent settings modal."]
+    },
+    "date": "2025-02-10",
+    "version": "1.52.14"
+  },
+  {
+    "children": {
+      "fixes": [
+        "Fix Aliyun deepseek-r1 reasoning parsing with oneapi, Support Aliyun deepseek-r1 reasoning."
+      ]
+    },
+    "date": "2025-02-10",
+    "version": "1.52.13"
+  },
+  {
+    "children": {
+      "fixes": ["Fix language incorrect on page hydration."]
+    },
+    "date": "2025-02-10",
+    "version": "1.52.12"
+  },
+  {
+    "children": {
+      "improvements": ["Support Mermaid in Artifacts."]
+    },
+    "date": "2025-02-10",
+    "version": "1.52.11"
+  },
+  {
+    "children": {},
+    "date": "2025-02-09",
+    "version": "1.52.10"
+  },
+  {
+    "children": {
+      "fixes": ["Fix changelog issue."]
+    },
+    "date": "2025-02-09",
+    "version": "1.52.9"
+  },
+  {
+    "children": {
+      "improvements": ["Update github model list, Update openrouter model list."]
+    },
+    "date": "2025-02-09",
+    "version": "1.52.8"
+  },
+  {
+    "children": {
+      "fixes": ["Rewrite to local container in docker deployment mode."],
+      "improvements": ["Update Cloudflare models."]
+    },
+    "date": "2025-02-09",
+    "version": "1.52.7"
+  },
+  {
+    "children": {
+      "improvements": ["Update ZeroOne models."]
+    },
+    "date": "2025-02-08",
+    "version": "1.52.6"
+  },
+  {
+    "children": {
+      "fixes": ["Fix changelog modal."]
+    },
+    "date": "2025-02-08",
+    "version": "1.52.5"
+  },
+  {
+    "children": {
+      "fixes": ["Fix changelog modal."]
+    },
+    "date": "2025-02-08",
+    "version": "1.52.4"
+  },
+  {
+    "children": {
+      "fixes": ["Add Zhipu param limit, Fix translation in variants mode."],
+      "improvements": ["Update Gemini 2.0 models."]
+    },
+    "date": "2025-02-08",
+    "version": "1.52.3"
+  },
+  {
+    "children": {
+      "improvements": ["Add siliconcloud pro models."]
+    },
+    "date": "2025-02-08",
+    "version": "1.52.2"
+  },
+  {
+    "children": {
+      "fixes": ["Fix static relative issues."]
+    },
+    "date": "2025-02-08",
+    "version": "1.52.1"
+  },
+  {
+    "children": {
+      "features": ["Refactor the auth condition in Next Auth."]
+    },
+    "date": "2025-02-08",
+    "version": "1.52.0"
+  },
+  {
+    "children": {},
+    "date": "2025-02-07",
+    "version": "1.51.16"
+  },
+  {
+    "children": {
+      "fixes": ["Fix home next auth error and update pnpm."]
+    },
+    "date": "2025-02-07",
+    "version": "1.51.15"
+  },
+  {
+    "children": {
+      "improvements": ["Update changelog cache and upgrade anthropic sdk."]
+    },
+    "date": "2025-02-07",
+    "version": "1.51.14"
+  },
+  {
+    "children": {
+      "fixes": ["Fix next auth error."]
+    },
+    "date": "2025-02-07",
+    "version": "1.51.13"
+  },
+  {
+    "children": {
+      "fixes": ["Try to fix next-auth issue."]
+    },
+    "date": "2025-02-07",
+    "version": "1.51.12"
+  },
+  {
+    "children": {
+      "fixes": ["Fix /file/[id] 500 issue."]
+    },
+    "date": "2025-02-06",
+    "version": "1.51.11"
+  },
+  {
+    "children": {
+      "fixes": ["Fix provider 500 issue."]
+    },
+    "date": "2025-02-06",
+    "version": "1.51.10"
+  },
+  {
+    "children": {
+      "improvements": ["Update edtion tag display and improve prerender."]
+    },
+    "date": "2025-02-06",
+    "version": "1.51.9"
+  },
+  {
+    "children": {
+      "improvements": ["Refactor model fetch method."]
+    },
+    "date": "2025-02-06",
+    "version": "1.51.8"
+  },
+  {
+    "children": {
+      "improvements": ["Add Aliyun deepseek-r1 distill models."]
+    },
+    "date": "2025-02-06",
+    "version": "1.51.7"
+  },
+  {
+    "children": {
+      "fixes": ["Try to fix discover error."]
+    },
+    "date": "2025-02-06",
+    "version": "1.51.6"
+  },
+  {
+    "children": {
+      "improvements": ["Add siliconcloud models."]
+    },
+    "date": "2025-02-06",
+    "version": "1.51.5"
+  },
+  {
+    "children": {},
+    "date": "2025-02-06",
+    "version": "1.51.4"
+  },
+  {
+    "children": {
+      "improvements": ["Add Cache, Metadata, FeatureFlag Viewer to DevPanel."],
+      "fixes": ["Artifact Parsing and Rendering Bug Fix for Gemini 2.0 Flash."]
+    },
+    "date": "2025-02-05",
+    "version": "1.51.3"
+  },
+  {
+    "children": {
+      "improvements": ["Update model list, add reasoning tag."]
+    },
+    "date": "2025-02-05",
+    "version": "1.51.2"
+  },
+  {
+    "children": {},
+    "date": "2025-02-05",
+    "version": "1.51.1"
+  },
+  {
+    "children": {
+      "features": ["Add reasoning tag support for custom models via UI or ENV."],
+      "fixes": [
+        "Fix deepseek-v3 & qvq model tag fetch error from SiliconCloud, fix model ability missing."
+      ]
+    },
+    "date": "2025-02-05",
+    "version": "1.51.0"
+  },
+  {
+    "children": {
+      "improvements": ["Add/Update Aliyun Cloud Models, update GitHub Models."]
+    },
+    "date": "2025-02-04",
+    "version": "1.50.5"
+  },
+  {
+    "children": {
+      "fixes": ["Fix invalid utf8 character."]
+    },
+    "date": "2025-02-04",
+    "version": "1.50.4"
+  },
+  {
+    "children": {
+      "improvements": ["Update model locale."]
+    },
+    "date": "2025-02-04",
+    "version": "1.50.3"
+  },
+  {
+    "children": {
+      "fixes": ["Fix o1 series calling issue."]
+    },
+    "date": "2025-02-04",
+    "version": "1.50.2"
+  },
+  {
+    "children": {
+      "fixes": ["Bind the selected group name in the rename modal.."]
+    },
+    "date": "2025-02-03",
+    "version": "1.50.1"
+  },
+  {
+    "children": {
+      "features": ["Add o3-mini support for OpenAI & GitHub Models."],
+      "fixes": ["Fix parse of deepseek r1 in siliconflow provider."]
+    },
+    "date": "2025-02-03",
+    "version": "1.50.0"
+  },
+  {
+    "children": {
+      "improvements": ["Update perplexity models."]
+    },
+    "date": "2025-02-03",
+    "version": "1.49.16"
+  },
+  {
+    "children": {
+      "improvements": ["Update Fireworks check model and fix check error."]
+    },
+    "date": "2025-02-03",
+    "version": "1.49.15"
+  },
+  {
+    "children": {
+      "fixes": ["Fix provider update issue."]
+    },
+    "date": "2025-02-03",
+    "version": "1.49.14"
+  },
+  {
+    "children": {
+      "fixes": ["Optimize requests without historical messages."]
+    },
+    "date": "2025-02-03",
+    "version": "1.49.13"
+  },
+  {
+    "children": {
+      "fixes": ["Fix can not stop generating."]
+    },
+    "date": "2025-02-02",
+    "version": "1.49.12"
+  },
+  {
+    "children": {
+      "fixes": ["Fix ollama intergration checker and client fetch issue."]
+    },
+    "date": "2025-02-02",
+    "version": "1.49.11"
+  },
+  {
+    "children": {
+      "fixes": ["Fix <think> tag crash with special markdown content."]
+    },
+    "date": "2025-02-02",
+    "version": "1.49.10"
+  },
+  {
+    "children": {
+      "improvements": ["Update siliconcloud models."]
+    },
+    "date": "2025-02-01",
+    "version": "1.49.9"
+  },
+  {
+    "children": {
+      "improvements": ["Support thinking for all non DeepSeek official api R1 models."]
+    },
+    "date": "2025-02-01",
+    "version": "1.49.8"
+  },
+  {
+    "children": {
+      "fixes": ["Multiple deepseek-reasoner request errors."]
+    },
+    "date": "2025-02-01",
+    "version": "1.49.7"
+  },
+  {
+    "children": {
+      "fixes": ["Support litellm reasoning streaming."]
+    },
+    "date": "2025-01-30",
+    "version": "1.49.6"
+  },
+  {
+    "children": {
+      "fixes": ["Pin @clerk/nextjs@6.10.2 to avoid build error."]
+    },
+    "date": "2025-01-28",
+    "version": "1.49.5"
+  },
+  {
+    "children": {
+      "fixes": ["Fix changelog locale not showing English."]
+    },
+    "date": "2025-01-28",
+    "version": "1.49.4"
+  },
+  {
+    "children": {
+      "fixes": ["Fix discover ssr hydration error."]
+    },
+    "date": "2025-01-27",
+    "version": "1.49.3"
+  },
+  {
+    "children": {
+      "improvements": ["Remove use query."]
+    },
+    "date": "2025-01-27",
+    "version": "1.49.2"
+  },
+  {
+    "children": {
+      "improvements": ["UseMobileWorkspace use nqus to replace useQuery."]
+    },
+    "date": "2025-01-27",
+    "version": "1.49.1"
+  },
+  {
+    "children": {
+      "features": ["Support Doubao Models."]
+    },
+    "date": "2025-01-27",
+    "version": "1.49.0"
+  },
+  {
+    "children": {
+      "improvements": ["Improve thinking style."]
+    },
+    "date": "2025-01-27",
+    "version": "1.48.4"
+  },
+  {
+    "children": {
+      "improvements": ["Improve model pricing with CNY."]
+    },
+    "date": "2025-01-26",
+    "version": "1.48.3"
+  },
+  {
+    "children": {
+      "improvements": [
+        "Add parallel_tool_calls support for Qwen, fix tag version and add provider changelog."
+      ]
+    },
+    "date": "2025-01-25",
+    "version": "1.48.2"
+  },
+  {
+    "children": {
+      "fixes": ["Fix ollama Browser Request failed in PG mode."]
+    },
+    "date": "2025-01-25",
+    "version": "1.48.1"
+  },
+  {
+    "children": {
+      "features": ["Support display thinking for DeepSeek R1."]
+    },
+    "date": "2025-01-24",
+    "version": "1.48.0"
+  },
+  {
+    "children": {
+      "improvements": ["Fix model fetch match tag error & add Hunyuan model fetch support."]
+    },
+    "date": "2025-01-24",
+    "version": "1.47.23"
+  },
+  {
+    "children": {
+      "fixes": ["Fix form input in provider."]
+    },
+    "date": "2025-01-24",
+    "version": "1.47.22"
+  },
+  {
+    "children": {
+      "improvements": ["Add HuggingFace Model: DeepSeek R1."]
+    },
+    "date": "2025-01-23",
+    "version": "1.47.21"
+  },
+  {
+    "children": {
+      "fixes": ["Fix tts in new provider model."]
+    },
+    "date": "2025-01-23",
+    "version": "1.47.20"
+  },
+  {
+    "children": {
+      "improvements": ["Add new stepfun model."]
+    },
+    "date": "2025-01-23",
+    "version": "1.47.19"
+  },
+  {
+    "children": {
+      "fixes": ["Fix debounce issue of provider config."]
+    },
+    "date": "2025-01-23",
+    "version": "1.47.18"
+  },
+  {
+    "children": {
+      "fixes": ["Upgrade react-i18next to ^15."]
+    },
+    "date": "2025-01-22",
+    "version": "1.47.17"
+  },
+  {
+    "children": {
+      "improvements": ["Add gemini new model."]
+    },
+    "date": "2025-01-22",
+    "version": "1.47.16"
+  },
+  {
+    "children": {
+      "improvements": ["Improve discover model page."]
+    },
+    "date": "2025-01-22",
+    "version": "1.47.15"
+  },
+  {
+    "children": {
+      "improvements": ["Support model list with model fetcher settings."]
+    },
+    "date": "2025-01-22",
+    "version": "1.47.14"
+  },
+  {
+    "children": {
+      "improvements": ["Add ModelFetcher for supported providers."]
+    },
+    "date": "2025-01-21",
+    "version": "1.47.13"
+  },
+  {
+    "children": {
+      "improvements": ["Refactor [@nav](https://github.com/nav) layout and improve pin list style."]
+    },
+    "date": "2025-01-21",
+    "version": "1.47.12"
+  },
+  {
+    "children": {
+      "improvements": ["Improve code for ai provider."]
+    },
+    "date": "2025-01-21",
+    "version": "1.47.11"
+  },
+  {
+    "children": {
+      "improvements": ["Support assistant blacklist."]
+    },
+    "date": "2025-01-21",
+    "version": "1.47.10"
+  },
+  {
+    "children": {
+      "improvements": ["Improve error code."]
+    },
+    "date": "2025-01-20",
+    "version": "1.47.9"
+  },
+  {
+    "children": {
+      "improvements": ["Add deepseek r1 model."]
+    },
+    "date": "2025-01-20",
+    "version": "1.47.8"
+  },
+  {
+    "children": {
+      "improvements": ["Remove redundant payload remapping in client-fetch."]
+    },
+    "date": "2025-01-20",
+    "version": "1.47.7"
+  },
+  {
+    "children": {
+      "improvements": ["Refactor provider code."]
+    },
+    "date": "2025-01-20",
+    "version": "1.47.6"
+  },
+  {
+    "children": {
+      "improvements": ["Improve ai provider code."]
+    },
+    "date": "2025-01-20",
+    "version": "1.47.5"
+  },
+  {
+    "children": {},
+    "date": "2025-01-18",
+    "version": "1.47.4"
+  },
+  {
+    "children": {
+      "fixes": ["Fix hydration error."]
+    },
+    "date": "2025-01-18",
+    "version": "1.47.3"
+  },
+  {
+    "children": {
+      "fixes": ["Fix api key in api key form."]
+    },
+    "date": "2025-01-17",
+    "version": "1.47.2"
+  },
+  {
+    "children": {},
+    "date": "2025-01-17",
+    "version": "1.47.1"
+  },
+  {
+    "children": {
+      "features": ["Support new ai provider in client pglite."]
+    },
+    "date": "2025-01-17",
+    "version": "1.47.0"
+  },
+  {
+    "children": {
+      "fixes": [
+        "Improve validation for provider and model in parseFilesConfig, temporarily disable S3 client integrity check for Cloudflare R2."
+      ]
+    },
+    "date": "2025-01-17",
+    "version": "1.46.7"
+  },
+  {
+    "children": {
+      "fixes": ["Gemini models HarmBlockThreshold."]
+    },
+    "date": "2025-01-16",
+    "version": "1.46.6"
+  },
+  {
+    "children": {},
+    "date": "2025-01-16",
+    "version": "1.46.5"
+  },
+  {
+    "children": {
+      "improvements": ["Refactor some implement for the next performance improvement."]
+    },
+    "date": "2025-01-16",
+    "version": "1.46.4"
+  },
+  {
+    "children": {
+      "fixes": ["Fix azure in new ai provider."]
+    },
+    "date": "2025-01-15",
+    "version": "1.46.3"
+  },
+  {
+    "children": {},
+    "date": "2025-01-15",
+    "version": "1.46.2"
+  },
+  {
+    "children": {
+      "improvements": ["Add auth support for PROXY_URL."]
+    },
+    "date": "2025-01-15",
+    "version": "1.46.1"
+  },
+  {
+    "children": {
+      "features": ["Add lm studio provider, support to customize Embedding model with env."]
+    },
+    "date": "2025-01-15",
+    "version": "1.46.0"
+  },
+  {
+    "children": {
+      "improvements": ["Refactor Minimax with LobeOpenAICompatibleFactory."]
+    },
+    "date": "2025-01-15",
+    "version": "1.45.17"
+  },
+  {
+    "children": {
+      "improvements": ["Improve ai provider code."]
+    },
+    "date": "2025-01-14",
+    "version": "1.45.16"
+  },
+  {
+    "children": {
+      "fixes": ["Fix pull models error in new ai provider."]
+    },
+    "date": "2025-01-14",
+    "version": "1.45.15"
+  },
+  {
+    "children": {},
+    "date": "2025-01-14",
+    "version": "1.45.14"
+  },
+  {
+    "children": {
+      "improvements": ["Improve model config form modal."]
+    },
+    "date": "2025-01-14",
+    "version": "1.45.13"
+  },
+  {
+    "children": {
+      "fixes": ["Fix enable_search parameter intro condition in Qwen."]
+    },
+    "date": "2025-01-14",
+    "version": "1.45.12"
+  },
+  {
+    "children": {
+      "fixes": ["Support Gemini 2.0 HarmBlockThreshold."]
+    },
+    "date": "2025-01-14",
+    "version": "1.45.11"
+  },
+  {
+    "children": {
+      "fixes": ["Fix some providers issues."]
+    },
+    "date": "2025-01-14",
+    "version": "1.45.10"
+  },
+  {
+    "children": {
+      "fixes": ["Fix pin package manager to pnpm@9 for docker."]
+    },
+    "date": "2025-01-14",
+    "version": "1.45.9"
+  },
+  {
+    "children": {
+      "fixes": ["Refactor dynamic import in RSC."]
+    },
+    "date": "2025-01-14",
+    "version": "1.45.8"
+  },
+  {
+    "children": {
+      "fixes": ["Fix released at for undefined condition."]
+    },
+    "date": "2025-01-13",
+    "version": "1.45.7"
+  },
+  {
+    "children": {
+      "fixes": ["Fix *_MODEL_LIST env in new provider."]
+    },
+    "date": "2025-01-10",
+    "version": "1.45.6"
+  },
+  {
+    "children": {
+      "fixes": ["Revert officeparser."]
+    },
+    "date": "2025-01-09",
+    "version": "1.45.5"
+  },
+  {
+    "children": {
+      "fixes": ["Fix GitHub and huggingface provider config unusable."]
+    },
+    "date": "2025-01-09",
+    "version": "1.45.4"
+  },
+  {
+    "children": {
+      "fixes": ["Fix some ai provider known issues."]
+    },
+    "date": "2025-01-09",
+    "version": "1.45.3"
+  },
+  {
+    "children": {
+      "improvements": ["Update siliconcloud model list."]
+    },
+    "date": "2025-01-09",
+    "version": "1.45.2"
+  },
+  {
+    "children": {
+      "fixes": ["Fix remark gfm regex breaks in Safari versions < 16.4."]
+    },
+    "date": "2025-01-09",
+    "version": "1.45.1"
+  },
+  {
+    "children": {
+      "features": ["Update Remark."]
+    },
+    "date": "2025-01-08",
+    "version": "1.45.0"
+  },
+  {
+    "children": {
+      "fixes": ["Fix provider enabled issue."]
+    },
+    "date": "2025-01-08",
+    "version": "1.44.3"
+  },
+  {
+    "children": {
+      "fixes": ["Add provider id validate."]
+    },
+    "date": "2025-01-08",
+    "version": "1.44.2"
+  },
+  {
+    "children": {
+      "fixes": ["Fix model select not auto update and sort issue."]
+    },
+    "date": "2025-01-08",
+    "version": "1.44.1"
+  },
+  {
+    "children": {
+      "features": ["Brand new AI provider."]
+    },
+    "date": "2025-01-07",
+    "version": "1.44.0"
+  },
+  {
+    "children": {
+      "fixes": ["Fix portal suspense error when first open."]
+    },
+    "date": "2025-01-07",
+    "version": "1.43.6"
+  },
+  {
+    "children": {
+      "improvements": ["Fix style warning in antd 5.23.0 and some error logs."]
+    },
+    "date": "2025-01-07",
+    "version": "1.43.5"
+  },
+  {
+    "children": {
+      "fixes": ["Fix format short number."]
+    },
+    "date": "2025-01-06",
+    "version": "1.43.4"
+  },
+  {
+    "children": {
+      "improvements": ["Upgrade @clerk/nextjs to v6."]
+    },
+    "date": "2025-01-04",
+    "version": "1.43.3"
+  },
+  {
+    "children": {
+      "fixes": ["Fix heatmap and manifest."]
+    },
+    "date": "2025-01-04",
+    "version": "1.43.2"
+  },
+  {
+    "children": {
+      "fixes": ["Fix stats data query issue."]
+    },
+    "date": "2025-01-03",
+    "version": "1.43.1"
+  },
+  {
+    "children": {
+      "features": ["Add User Stats and Refactor Profile."],
+      "fixes": ["Fix chat page error."]
+    },
+    "date": "2025-01-03",
+    "version": "1.43.0"
+  },
+  {
+    "children": {
+      "improvements": ["Fix zero-sized element in topic list."]
+    },
+    "date": "2025-01-03",
+    "version": "1.42.6"
+  },
+  {
+    "children": {
+      "fixes": ["Fix topic mobile view ui error."]
+    },
+    "date": "2025-01-02",
+    "version": "1.42.5"
+  },
+  {
+    "children": {
+      "improvements": ["Refactor provider info and improve settings side bar loading."]
+    },
+    "date": "2025-01-02",
+    "version": "1.42.4"
+  },
+  {
+    "children": {},
+    "date": "2025-01-01",
+    "version": "1.42.3"
+  },
+  {
+    "children": {
+      "improvements": ["Add o1 model in openai and openrouter models."]
+    },
+    "date": "2024-12-31",
+    "version": "1.42.2"
+  },
+  {
+    "children": {
+      "fixes": ["Fix custom max_token not saved from customModelCards."]
+    },
+    "date": "2024-12-29",
+    "version": "1.42.1"
+  },
+  {
+    "children": {
+      "features": ["Add custom stream handle support for LobeOpenAICompatibleFactory."]
+    },
+    "date": "2024-12-29",
+    "version": "1.42.0"
+  },
+  {
+    "children": {
+      "features": ["Support white list for discover assistant."]
+    },
+    "date": "2024-12-28",
+    "version": "1.41.0"
+  },
+  {
+    "children": {
+      "improvements": ["Update deepseek V3 model."]
+    },
+    "date": "2024-12-28",
+    "version": "1.40.4"
+  },
+  {
+    "children": {
       "fixes": ["Fix fetch error in changelog modal."]
     },
     "date": "2024-12-26",

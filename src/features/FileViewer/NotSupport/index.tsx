@@ -1,6 +1,5 @@
 import { IDocument } from '@cyntler/react-doc-viewer';
-import { FluentEmoji } from '@lobehub/ui';
-import { Button } from 'antd';
+import { Button, FluentEmoji } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
 import Link from 'next/link';
 import React, { ComponentType, useState } from 'react';
@@ -15,9 +14,9 @@ const useStyles = createStyles(({ css, token }) => ({
     width: 100%;
     margin: 12px;
     padding: 24px;
+    border-radius: 4px;
 
     background: ${token.colorBgContainer};
-    border-radius: 4px;
     box-shadow: ${token.boxShadowTertiary};
   `,
 }));

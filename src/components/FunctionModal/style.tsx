@@ -10,10 +10,10 @@ export const useStyles = createStyles(({ css, token, prefixCls, isDarkMode, resp
 
         width: min(90vw, 450px);
         padding: 0;
-
-        background: ${isDarkMode ? token.colorBgElevated : token.colorBgLayout};
         border: 1px solid ${token.colorSplit};
         border-radius: ${token.borderRadiusLG}px;
+
+        background: ${isDarkMode ? token.colorBgElevated : token.colorBgLayout};
 
         ${responsive.mobile} {
           width: unset;
@@ -28,6 +28,10 @@ export const useStyles = createStyles(({ css, token, prefixCls, isDarkMode, resp
         margin-block-start: 0;
         padding: 16px;
       }
+
+      .${prefixCls}-modal-confirm-paragraph {
+        max-width: 100%;
+      }
     `,
     wrap: css`
       overflow: hidden auto;
@@ -35,4 +39,4 @@ export const useStyles = createStyles(({ css, token, prefixCls, isDarkMode, resp
   };
 });
 
-export const closeIcon = <Icon icon={XIcon} size={{ fontSize: 20 }} />;
+export const closeIcon = <Icon icon={XIcon} size={20} />;

@@ -1,11 +1,8 @@
-import dayjs from 'dayjs';
 import { and, eq } from 'drizzle-orm';
-import { Mock, afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
-import { MessageModel } from '@/database/_deprecated/models/message';
 import { clientDB, initializeDB } from '@/database/client/db';
 import {
-  MessageItem,
   files,
   messagePlugins,
   messageTTS,
@@ -21,6 +18,7 @@ import {
   ChatTTS,
   ChatTranslate,
   CreateMessageParams,
+  MessageItem,
 } from '@/types/message';
 
 import { ClientService } from './client';
@@ -286,7 +284,7 @@ describe('MessageClientService', () => {
     it('should update the plugin state of a message', async () => {
       // Setup
       await clientDB.insert(messages).values({ id: mockMessageId, role: 'user', userId });
-      await clientDB.insert(messagePlugins).values({ id: mockMessageId });
+      await clientDB.insert(messagePlugins).values({ id: mockMessageId, userId });
       const key = 'stateKey';
       const value = 'stateValue';
       const newPluginState = { [key]: value };
@@ -306,7 +304,7 @@ describe('MessageClientService', () => {
     it('should update the plugin arguments object of a message', async () => {
       // Setup
       await clientDB.insert(messages).values({ id: mockMessageId, role: 'user', userId });
-      await clientDB.insert(messagePlugins).values({ id: mockMessageId });
+      await clientDB.insert(messagePlugins).values({ id: mockMessageId, userId });
       const value = 'stateValue';
 
       // Execute
@@ -321,7 +319,7 @@ describe('MessageClientService', () => {
     it('should update the plugin arguments string of a message', async () => {
       // Setup
       await clientDB.insert(messages).values({ id: mockMessageId, role: 'user', userId });
-      await clientDB.insert(messagePlugins).values({ id: mockMessageId });
+      await clientDB.insert(messagePlugins).values({ id: mockMessageId, userId });
       const value = 'stateValue';
       // Execute
       await messageService.updateMessagePluginArguments(
@@ -347,24 +345,6 @@ describe('MessageClientService', () => {
 
       // Assert
       expect(count).toBe(1);
-    });
-  });
-
-  describe('countTodayMessages', () => {
-    it('should count the number of messages created today', async () => {
-      // Setup
-      const mockMessages = [
-        { ...mockMessage, id: undefined, createdAt: new Date(), userId },
-        { ...mockMessage, id: undefined, createdAt: new Date(), userId },
-        { ...mockMessage, id: undefined, createdAt: new Date('2023-01-01'), userId },
-      ];
-      await clientDB.insert(messages).values(mockMessages);
-
-      // Execute
-      const count = await messageService.countTodayMessages();
-
-      // Assert
-      expect(count).toBe(2);
     });
   });
 

@@ -1,8 +1,6 @@
-import dayjs from 'dayjs';
-
 import { INBOX_SESSION_ID } from '@/const/session';
 import { clientDB } from '@/database/client/db';
-import { MessageModel } from '@/database/server/models/message';
+import { MessageModel } from '@/database/models/message';
 import { BaseClientService } from '@/services/baseClientService';
 import { clientS3Storage } from '@/services/file/ClientS3';
 import { ChatMessage } from '@/types/message';
@@ -52,15 +50,20 @@ export class ClientService extends BaseClientService implements IMessageService 
     return data as unknown as ChatMessage[];
   };
 
-  countMessages: IMessageService['countMessages'] = async () => {
-    return this.messageModel.count();
+  countMessages: IMessageService['countMessages'] = async (params) => {
+    return this.messageModel.count(params);
   };
 
-  countTodayMessages: IMessageService['countTodayMessages'] = async () => {
-    const topics = await this.messageModel.queryAll();
-    return topics.filter(
-      (item) => dayjs(item.createdAt).format('YYYY-MM-DD') === dayjs().format('YYYY-MM-DD'),
-    ).length;
+  countWords: IMessageService['countWords'] = async (params) => {
+    return this.messageModel.countWords(params);
+  };
+
+  rankModels: IMessageService['rankModels'] = async () => {
+    return this.messageModel.rankModels();
+  };
+
+  getHeatmaps: IMessageService['getHeatmaps'] = async () => {
+    return this.messageModel.getHeatmaps();
   };
 
   getAllMessagesInSession: IMessageService['getAllMessagesInSession'] = async (sessionId) => {
@@ -87,6 +90,10 @@ export class ClientService extends BaseClientService implements IMessageService 
 
   updateMessagePluginState: IMessageService['updateMessagePluginState'] = async (id, value) => {
     return this.messageModel.updatePluginState(id, value);
+  };
+
+  updateMessagePluginError: IMessageService['updateMessagePluginError'] = async (id, value) => {
+    return this.messageModel.updateMessagePlugin(id, { error: value });
   };
 
   updateMessagePluginArguments: IMessageService['updateMessagePluginArguments'] = async (

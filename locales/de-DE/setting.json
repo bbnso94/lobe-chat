@@ -6,6 +6,7 @@
     "chat": "Chat-Präferenz",
     "meta": "Assistenteninformation",
     "modal": "Modell-Einstellungen",
+    "opening": "Eröffnungs Einstellungen",
     "plugin": "Plugin-Einstellungen",
     "prompt": "Rollenkonfiguration",
     "tts": "Sprachdienst"
@@ -41,6 +42,17 @@
     "sessionDesc": "Rollenkonfiguration und Sitzungspräferenzen.",
     "sessionWithName": "Sitzungseinstellungen · {{name}}",
     "title": "Einstellungen"
+  },
+  "hotkey": {
+    "conflicts": "Konflikte mit bestehenden Tastenkombinationen",
+    "group": {
+      "conversation": "Gespräch",
+      "essential": "Grundlegend"
+    },
+    "invalidCombination": "Die Tastenkombination muss mindestens einen Modifikatortaste (Strg, Alt, Umschalt) und eine normale Taste enthalten",
+    "record": "Drücken Sie eine Taste, um die Tastenkombination aufzuzeichnen",
+    "reset": "Auf die Standard-Tastenkombination zurücksetzen",
+    "title": "Tastenkombinationen"
   },
   "llm": {
     "aesGcm": "Ihr Schlüssel und Ihre Proxy-Adresse werden mit dem <1>AES-GCM</1> Verschlüsselungsalgorithmus verschlüsselt.",
@@ -84,8 +96,7 @@
         },
         "modalTitle": "Benutzerdefinierte Modellkonfiguration",
         "tokens": {
-          "title": "Maximale Token-Anzahl",
-          "unlimited": "unbegrenzt"
+          "title": "Maximale Token-Anzahl"
         },
         "vision": {
           "extra": "Diese Konfiguration aktiviert nur die Bild-Upload-Einstellungen innerhalb der Anwendung. Ob die Erkennung unterstützt wird, hängt vollständig vom Modell selbst ab. Bitte teste die Verwendbarkeit der visuellen Erkennungsfähigkeit des Modells selbst.",
@@ -139,6 +150,7 @@
       "title": "Hintergrundfarbe"
     },
     "description": {
+      "desc": "Eine kurze Einführung in deinen Assistenten, nicht als Rolleneinstellung",
       "placeholder": "Bitte geben Sie eine Assistentenbeschreibung ein",
       "title": "Assistentenbeschreibung"
     },
@@ -150,11 +162,27 @@
       "placeholder": "Bitte geben Sie das Rollen-Prompt-Wort ein",
       "title": "Rollen-Einstellung"
     },
+    "submit": "Assistenteninformationen aktualisieren",
     "tag": {
+      "desc": "Die Assistenten-Tags werden im Assistentenmarkt angezeigt",
       "placeholder": "Bitte geben Sie ein Tag ein",
       "title": "Tag"
     },
     "title": "Assistenteninformationen"
+  },
+  "settingAppearance": {
+    "neutralColor": {
+      "desc": "Anpassung der Graustufen mit unterschiedlichen Farbneigungen",
+      "title": "Neutrale Farben"
+    },
+    "preview": {
+      "title": "Farbauswahl"
+    },
+    "primaryColor": {
+      "desc": "Benutzerdefinierte Hauptfarbe",
+      "title": "Hauptfarbe"
+    },
+    "title": "Anwendungsdesign"
   },
   "settingChat": {
     "autoCreateTopicThreshold": {
@@ -195,15 +223,45 @@
       "placeholder": "Vorlagen-{{text}} werden durch Echtzeit-Eingabeinformationen ersetzt",
       "title": "Benutzereingabe-Vorverarbeitung"
     },
+    "submit": "Chat-Präferenzen aktualisieren",
     "title": "Chat-Einstellungen"
+  },
+  "settingChatAppearance": {
+    "fontSize": {
+      "desc": "Schriftgröße des Chatinhalts",
+      "marks": {
+        "normal": "Standard"
+      },
+      "title": "Schriftgröße"
+    },
+    "highlighterTheme": {
+      "title": "Code-Hervorhebungsthema"
+    },
+    "mermaidTheme": {
+      "title": "Mermaid-Thema"
+    },
+    "title": "Chatdesign"
+  },
+  "settingCommon": {
+    "lang": {
+      "autoMode": "System folgen",
+      "title": "Sprache"
+    },
+    "themeMode": {
+      "auto": "Automatisch",
+      "dark": "Dunkel",
+      "light": "Hell",
+      "title": "Thema"
+    },
+    "title": "Allgemeine Einstellungen"
   },
   "settingModel": {
     "enableMaxTokens": {
       "title": "Maximale Token pro Antwort aktivieren"
     },
     "frequencyPenalty": {
-      "desc": "Je höher der Wert, desto wahrscheinlicher ist es, dass sich wiederholende Wörter reduziert werden",
-      "title": "Frequenzstrafe"
+      "desc": "Je höher der Wert, desto vielfältiger und abwechslungsreicher die Wortwahl; je niedriger der Wert, desto einfacher und schlichter die Wortwahl",
+      "title": "Wortvielfalt"
     },
     "maxTokens": {
       "desc": "Maximale Anzahl von Tokens, die pro Interaktion verwendet werden",
@@ -213,20 +271,39 @@
       "desc": "{{provider}} Modell",
       "title": "Modell"
     },
+    "params": {
+      "title": "Erweiterte Parameter"
+    },
     "presencePenalty": {
-      "desc": "Je höher der Wert, desto wahrscheinlicher ist es, dass sich das Gespräch auf neue Themen ausweitet",
-      "title": "Themenfrische"
+      "desc": "Je höher der Wert, desto eher werden unterschiedliche Ausdrucksweisen bevorzugt, um Wiederholungen zu vermeiden; je niedriger der Wert, desto eher werden wiederholte Konzepte oder Erzählungen verwendet, was zu einer konsistenteren Ausdrucksweise führt",
+      "title": "Ausdrucksvielfalt"
     },
+    "submit": "Modell-Einstellungen aktualisieren",
     "temperature": {
-      "desc": "Je höher der Wert, desto zufälliger die Antwort",
-      "title": "Zufälligkeit",
-      "titleWithValue": "Zufälligkeit {{value}}"
+      "desc": "Je höher der Wert, desto kreativer und einfallsreicher die Antworten; je niedriger der Wert, desto strenger die Antworten",
+      "title": "Kreativitätsgrad",
+      "warning": "Ein zu hoher Kreativitätsgrad kann zu unverständlichen Ausgaben führen"
     },
-    "title": "Modelleinstellungen",
+    "title": "Modell Einstellungen",
     "topP": {
-      "desc": "Ähnlich wie Zufälligkeit, aber nicht zusammen mit Zufälligkeit ändern",
-      "title": "Top-P-Sampling"
+      "desc": "Wie viele Möglichkeiten in Betracht gezogen werden, je höher der Wert, desto mehr mögliche Antworten werden akzeptiert; je niedriger der Wert, desto eher wird die wahrscheinlichste Antwort gewählt. Es wird nicht empfohlen, dies zusammen mit dem Kreativitätsgrad zu ändern",
+      "title": "Offenheit des Denkens"
     }
+  },
+  "settingOpening": {
+    "openingMessage": {
+      "desc": "Die Eröffnungsnachricht beim Start des Gesprächs, um die Funktionen des Assistenten vorzustellen",
+      "placeholder": "Hallo, ich bin der benutzerdefinierte Assistent. Du kannst sofort mit mir sprechen oder zu den Assistenteneinstellungen gehen, um meine Informationen zu vervollständigen.",
+      "title": "Eröffnungsnachricht"
+    },
+    "openingQuestions": {
+      "desc": "Leitfragen, die zu Beginn des Gesprächs angezeigt werden",
+      "empty": "Keine Fragen vorhanden",
+      "placeholder": "Bitte Frage eingeben",
+      "repeat": "Frage existiert bereits",
+      "title": "Eröffnungsfragen"
+    },
+    "title": "Eröffnungs Einstellungen"
   },
   "settingPlugin": {
     "title": "Plugin-Liste"
@@ -278,6 +355,7 @@
       "desc": "Browser ist ein nativer Spracherkennungsdienst des Browsers",
       "title": "Spracherkennungsdienst"
     },
+    "submit": "Sprachdienst aktualisieren",
     "title": "Sprachdienste",
     "tts": "Sprachsynthese-Einstellungen",
     "ttsService": {
@@ -290,36 +368,32 @@
       "title": "Sprachsynthese-Stimme"
     }
   },
-  "settingTheme": {
-    "avatar": {
-      "title": "Profilbild"
-    },
-    "fontSize": {
-      "desc": "Schriftgröße für Chat-Inhalte",
-      "marks": {
-        "normal": "Normal"
+  "storage": {
+    "actions": {
+      "export": {
+        "button": "Exportieren",
+        "exportType": {
+          "agent": "Exportiere Assistenteneinstellungen",
+          "agentWithMessage": "Exportiere Assistenten und Nachrichten",
+          "all": "Exportiere globale Einstellungen und alle Assistentendaten",
+          "allAgent": "Exportiere alle Assistenteneinstellungen",
+          "allAgentWithMessage": "Exportiere alle Assistenten und Nachrichten",
+          "globalSetting": "Exportiere globale Einstellungen"
+        },
+        "title": "Daten exportieren"
       },
-      "title": "Schriftgröße"
+      "import": {
+        "button": "Importieren",
+        "title": "Daten importieren"
+      },
+      "title": "Erweiterte Aktionen"
     },
-    "lang": {
-      "autoMode": "Systemsprache folgen",
-      "title": "Sprache"
+    "desc": "Speicherverbrauch im aktuellen Browser",
+    "embeddings": {
+      "used": "Vektorspeicher"
     },
-    "neutralColor": {
-      "desc": "Benutzerdefinierte Graustufen für verschiedene Farbneigungen",
-      "title": "Neutralfarbe"
-    },
-    "primaryColor": {
-      "desc": "Benutzerdefinierte Hauptfarbe des Themas",
-      "title": "Hauptfarbe"
-    },
-    "themeMode": {
-      "auto": "Automatisch",
-      "dark": "Dunkel",
-      "light": "Hell",
-      "title": "Thema"
-    },
-    "title": "Thema einstellen"
+    "title": "Datenspeicher",
+    "used": "Speicherverbrauch"
   },
   "submitAgentModal": {
     "button": "Assistent einreichen",
@@ -327,6 +401,12 @@
     "metaMiss": "Bitte vervollständigen Sie die Assistenteninformationen, einschließlich Name, Beschreibung und Tags, bevor Sie sie einreichen.",
     "placeholder": "Geben Sie die Kennung des Assistenten ein, die eindeutig sein muss, z. B. Web-Entwicklung",
     "tooltips": "Auf dem Assistentenmarkt teilen"
+  },
+  "submitFooter": {
+    "reset": "Zurücksetzen",
+    "submit": "Speichern",
+    "unSaved": "Nicht gespeicherte Änderungen",
+    "unSavedWarning": "Es gibt derzeit nicht gespeicherte Änderungen"
   },
   "sync": {
     "device": {
@@ -379,6 +459,7 @@
       "placeholder": "Bitte benutzerdefinierte Eingabe eingeben",
       "title": "Benutzerdefinierte Eingabe"
     },
+    "helpInfo": "Beim Erstellen eines neuen Assistenten werden die Standardassistenteneinstellungen als Voreinstellungen verwendet.",
     "historyCompress": {
       "label": "Gesprächshistorienmodell",
       "modelDesc": "Das Modell, das zur Komprimierung der Gesprächshistorie verwendet wird",
@@ -411,7 +492,10 @@
     "agent": "Standard-Assistent",
     "common": "Allgemeine Einstellungen",
     "experiment": "Experiment",
+    "hotkey": "Tastenkombinationen",
     "llm": "Sprachmodell",
+    "provider": "KI-Dienstanbieter",
+    "storage": "Datenspeicher",
     "sync": "Cloud-Synchronisierung",
     "system-agent": "Systemassistent",
     "tts": "Sprachdienste"

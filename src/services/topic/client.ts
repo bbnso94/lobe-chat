@@ -1,6 +1,6 @@
 import { INBOX_SESSION_ID } from '@/const/session';
 import { clientDB } from '@/database/client/db';
-import { TopicModel } from '@/database/server/models/topic';
+import { TopicModel } from '@/database/models/topic';
 import { BaseClientService } from '@/services/baseClientService';
 import { ChatTopic } from '@/types/topic';
 
@@ -55,8 +55,12 @@ export class ClientService extends BaseClientService implements ITopicService {
     return data as unknown as Promise<ChatTopic[]>;
   };
 
-  countTopics: ITopicService['countTopics'] = async () => {
-    return this.topicModel.count();
+  countTopics: ITopicService['countTopics'] = async (params) => {
+    return this.topicModel.count(params);
+  };
+
+  rankTopics: ITopicService['rankTopics'] = async (limit) => {
+    return this.topicModel.rank(limit);
   };
 
   updateTopic: ITopicService['updateTopic'] = async (id, data) => {

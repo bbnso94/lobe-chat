@@ -1,8 +1,8 @@
 import { INBOX_SESSION_ID } from '@/const/session';
 import { clientDB } from '@/database/client/db';
+import { SessionModel } from '@/database/models/session';
+import { SessionGroupModel } from '@/database/models/sessionGroup';
 import { AgentItem } from '@/database/schemas';
-import { SessionModel } from '@/database/server/models/session';
-import { SessionGroupModel } from '@/database/server/models/sessionGroup';
 import { BaseClientService } from '@/services/baseClientService';
 import { LobeAgentConfig } from '@/types/agent';
 
@@ -52,6 +52,18 @@ export class ClientService extends BaseClientService implements ISessionService 
   };
 
   getSessionConfig: ISessionService['getSessionConfig'] = async (id) => {
+    if (id === INBOX_SESSION_ID) {
+      const item = await this.sessionModel.findByIdOrSlug(INBOX_SESSION_ID);
+
+      // if there is no session for user, create one
+      if (!item) {
+        const defaultAgentConfig =
+          window.global_serverConfigStore.getState().serverConfig.defaultAgent?.config || {};
+
+        await this.sessionModel.createInbox(defaultAgentConfig);
+      }
+    }
+
     const res = await this.sessionModel.findByIdOrSlug(id);
 
     if (!res) throw new Error('Session not found');
@@ -74,8 +86,12 @@ export class ClientService extends BaseClientService implements ISessionService 
     }
   };
 
-  countSessions: ISessionService['countSessions'] = async () => {
-    return this.sessionModel.count();
+  countSessions: ISessionService['countSessions'] = async (params) => {
+    return this.sessionModel.count(params);
+  };
+
+  rankSessions: ISessionService['rankSessions'] = async (limit) => {
+    return this.sessionModel.rank(limit);
   };
 
   searchSessions: ISessionService['searchSessions'] = async (keyword) => {
@@ -90,10 +106,7 @@ export class ClientService extends BaseClientService implements ISessionService 
   };
 
   updateSessionConfig: ISessionService['updateSessionConfig'] = async (activeId, config) => {
-    const session = await this.sessionModel.findByIdOrSlug(activeId);
-    if (!session || !config) return;
-
-    return this.sessionModel.updateConfig(session.agent.id, config as AgentItem);
+    return this.sessionModel.updateConfig(activeId, config as AgentItem);
   };
 
   updateSessionMeta: ISessionService['updateSessionMeta'] = async (activeId, meta) => {

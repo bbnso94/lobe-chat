@@ -1,5 +1,5 @@
-import { Form, type FormItemProps, Icon, copyToClipboard } from '@lobehub/ui';
-import { App, Button, Switch } from 'antd';
+import { Button, Form, type FormItemProps, copyToClipboard } from '@lobehub/ui';
+import { App, Switch } from 'antd';
 import isEqual from 'fast-deep-equal';
 import { CopyIcon } from 'lucide-react';
 import { memo, useState } from 'react';
@@ -14,6 +14,7 @@ import { useChatStore } from '@/store/chat';
 import { chatSelectors, topicSelectors } from '@/store/chat/selectors';
 import { exportFile } from '@/utils/client/exportFile';
 
+import { useStyles } from '../style';
 import Preview from './Preview';
 import { generateMessages } from './generateMessages';
 import { FieldType } from './type';
@@ -26,12 +27,14 @@ const DEFAULT_FIELD_VALUE: FieldType = {
 const ShareImage = memo(() => {
   const [fieldValue, setFieldValue] = useState(DEFAULT_FIELD_VALUE);
   const { t } = useTranslation(['chat', 'common']);
+  const { styles } = useStyles();
   const { message } = App.useApp();
 
   const settings: FormItemProps[] = [
     {
       children: <Switch />,
       label: t('shareModal.withSystemRole'),
+      layout: 'horizontal',
       minWidth: undefined,
       name: 'withSystemRole',
       valuePropName: 'checked',
@@ -39,6 +42,7 @@ const ShareImage = memo(() => {
     {
       children: <Switch />,
       label: t('shareModal.includeTool'),
+      layout: 'horizontal',
       minWidth: undefined,
       name: 'includeTool',
       valuePropName: 'checked',
@@ -54,45 +58,54 @@ const ShareImage = memo(() => {
   const title = topic?.title || t('shareModal.exportTitle');
 
   const isMobile = useIsMobile();
+
+  const button = (
+    <>
+      <Button
+        block
+        icon={CopyIcon}
+        onClick={async () => {
+          await copyToClipboard(content);
+          message.success(t('copySuccess', { defaultValue: 'Copy Success', ns: 'common' }));
+        }}
+        size={isMobile ? undefined : 'large'}
+        type={'primary'}
+      >
+        {t('copy', { ns: 'common' })}
+      </Button>
+      <Button
+        block
+        onClick={() => {
+          exportFile(content, `${title}.json`);
+        }}
+        size={isMobile ? undefined : 'large'}
+      >
+        {t('shareModal.downloadFile')}
+      </Button>
+    </>
+  );
+
   return (
-    <Flexbox gap={16} horizontal={!isMobile}>
-      <Preview content={content} />
-      <Flexbox gap={16}>
-        <Form
-          initialValues={DEFAULT_FIELD_VALUE}
-          items={settings}
-          itemsType={'flat'}
-          onValuesChange={(_, v) => setFieldValue(v)}
-          {...FORM_STYLE}
-          itemMinWidth={320}
-        />
-        <Button
-          block
-          icon={<Icon icon={CopyIcon} />}
-          onClick={async () => {
-            await copyToClipboard(content);
-            message.success(t('copySuccess', { defaultValue: 'Copy Success', ns: 'common' }));
-          }}
-          size={'large'}
-          style={isMobile ? { bottom: 0, position: 'sticky' } : undefined}
-          type={'primary'}
-        >
-          {t('copy', { ns: 'common' })}
-        </Button>
-        {!isMobile && (
-          <Button
-            block
-            onClick={() => {
-              exportFile(content, `${title}.json`);
-            }}
-            size={'large'}
-            variant={'filled'}
-          >
-            {t('shareModal.downloadFile')}
-          </Button>
-        )}
+    <>
+      <Flexbox className={styles.body} gap={16} horizontal={!isMobile}>
+        <Preview content={content} />
+        <Flexbox className={styles.sidebar} gap={12}>
+          <Form
+            initialValues={DEFAULT_FIELD_VALUE}
+            items={settings}
+            itemsType={'flat'}
+            onValuesChange={(_, v) => setFieldValue(v)}
+            {...FORM_STYLE}
+          />
+          {!isMobile && button}
+        </Flexbox>
       </Flexbox>
-    </Flexbox>
+      {isMobile && (
+        <Flexbox className={styles.footer} gap={8} horizontal>
+          {button}
+        </Flexbox>
+      )}
+    </>
   );
 });
 

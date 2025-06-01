@@ -1,21 +1,24 @@
 import { ActionIcon } from '@lobehub/ui';
 import { Popover, type PopoverProps } from 'antd';
-import { useTheme } from 'antd-style';
 import { Languages } from 'lucide-react';
 import { memo, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Menu, { type MenuProps } from '@/components/Menu';
 import { localeOptions } from '@/locales/resources';
-import { useUserStore } from '@/store/user';
-import { userGeneralSettingsSelectors } from '@/store/user/selectors';
+import { useGlobalStore } from '@/store/global';
+import { globalGeneralSelectors } from '@/store/global/selectors';
+import { LocaleMode } from '@/types/locale';
 
 const LangButton = memo<{ placement?: PopoverProps['placement'] }>(({ placement = 'right' }) => {
-  const theme = useTheme();
-  const [language, switchLocale] = useUserStore((s) => [
-    userGeneralSettingsSelectors.language(s),
+  const [language, switchLocale] = useGlobalStore((s) => [
+    globalGeneralSelectors.language(s),
     s.switchLocale,
   ]);
+
+  const handleLangChange = (value: LocaleMode) => {
+    switchLocale(value);
+  };
 
   const { t } = useTranslation('setting');
 
@@ -23,13 +26,13 @@ const LangButton = memo<{ placement?: PopoverProps['placement'] }>(({ placement 
     () => [
       {
         key: 'auto',
-        label: t('settingTheme.lang.autoMode'),
-        onClick: () => switchLocale('auto'),
+        label: t('settingCommon.lang.autoMode'),
+        onClick: () => handleLangChange('auto'),
       },
       ...localeOptions.map((item) => ({
         key: item.value,
         label: item.label,
-        onClick: () => switchLocale(item.value),
+        onClick: () => handleLangChange(item.value),
       })),
     ],
     [t],
@@ -39,17 +42,17 @@ const LangButton = memo<{ placement?: PopoverProps['placement'] }>(({ placement 
     <Popover
       arrow={false}
       content={<Menu items={items} selectable selectedKeys={[language]} />}
-      overlayInnerStyle={{
-        padding: 0,
-      }}
       placement={placement}
+      styles={{
+        body: {
+          maxHeight: 360,
+          overflow: 'auto',
+          padding: 0,
+        },
+      }}
       trigger={['click', 'hover']}
     >
-      <ActionIcon
-        icon={Languages}
-        size={{ blockSize: 32, fontSize: 16 }}
-        style={{ border: `1px solid ${theme.colorFillSecondary}` }}
-      />
+      <ActionIcon icon={Languages} size={{ blockSize: 32, size: 16 }} />
     </Popover>
   );
 });

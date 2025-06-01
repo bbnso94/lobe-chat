@@ -1,5 +1,5 @@
-import { Icon, Tooltip } from '@lobehub/ui';
-import { Badge, Button, Tag } from 'antd';
+import { Button, Icon, Tag, Tooltip } from '@lobehub/ui';
+import { Badge } from 'antd';
 import { createStyles } from 'antd-style';
 import { BoltIcon, Loader2Icon, RotateCwIcon } from 'lucide-react';
 import { darken, lighten } from 'polished';
@@ -14,12 +14,12 @@ import EmbeddingStatus from './EmbeddingStatus';
 const useStyles = createStyles(({ css, token, isDarkMode }) => ({
   errorReason: css`
     padding: 4px;
+    border-radius: 4px;
 
     font-family: monospace;
     font-size: 12px;
 
     background: ${isDarkMode ? darken(0.1, token.colorText) : lighten(0.1, token.colorText)};
-    border-radius: 4px;
   `,
 }));
 
@@ -54,16 +54,10 @@ const FileParsingStatus = memo<FileParsingStatusProps>(
       case AsyncTaskStatus.Processing: {
         return (
           <Tooltip
-            overlayStyle={{ pointerEvents: 'none' }}
+            styles={{ root: { pointerEvents: 'none' } }}
             title={t('FileParsingStatus.chunks.status.processingTip')}
           >
-            <Tag
-              bordered={false}
-              className={className}
-              color={'processing'}
-              icon={<Badge status={'processing'} />}
-              style={{ display: 'flex', gap: 4 }}
-            >
+            <Tag className={className} color={'processing'} icon={<Badge status={'processing'} />}>
               {t('FileParsingStatus.chunks.status.processing')}
             </Tag>
           </Tooltip>
@@ -73,7 +67,7 @@ const FileParsingStatus = memo<FileParsingStatusProps>(
       case AsyncTaskStatus.Error: {
         return (
           <Tooltip
-            overlayStyle={{ maxWidth: 340, pointerEvents: 'none' }}
+            styles={{ root: { maxWidth: 340, pointerEvents: 'none' } }}
             title={
               <Flexbox gap={4}>
                 {t('FileParsingStatus.chunks.status.errorResult')}
@@ -109,7 +103,7 @@ const FileParsingStatus = memo<FileParsingStatusProps>(
           return (
             <Flexbox horizontal>
               <Tooltip
-                overlayStyle={{ pointerEvents: 'none' }}
+                styles={{ root: { pointerEvents: 'none' } }}
                 title={t('FileParsingStatus.chunks.embeddingStatus.empty')}
               >
                 <Tag

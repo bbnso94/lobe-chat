@@ -1,5 +1,4 @@
-import { Tooltip } from '@lobehub/ui';
-import { Tag } from 'antd';
+import { Tag, Tooltip } from '@lobehub/ui';
 import { useTheme } from 'antd-style';
 import { CSSProperties, memo, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -23,11 +22,11 @@ const PlanTag = memo<PlanTagProps>(({ type = PlanType.Preview }) => {
     switch (type) {
       case PlanType.Preview: {
         return {
-          desc: t('userPanel.preview'),
+          desc: t('userPanel.community'),
           style: {
             background: theme.colorFill,
           },
-          title: 'Preview',
+          title: 'Community',
         };
       }
     }

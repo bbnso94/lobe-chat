@@ -2,9 +2,8 @@ import { createTRPCClient, httpBatchLink } from '@trpc/client';
 import { createTRPCReact } from '@trpc/react-query';
 import superjson from 'superjson';
 
-import { fetchErrorNotification } from '@/components/Error/fetchErrorNotification';
-import { loginRequired } from '@/components/Error/loginRequiredNotification';
-import { ModelProvider } from '@/libs/agent-runtime';
+import { isDesktop } from '@/const/version';
+import { ModelProvider } from '@/libs/model-runtime';
 import type { LambdaRouter } from '@/server/routers/lambda';
 
 import { ErrorResponse } from './types';
@@ -12,14 +11,25 @@ import { ErrorResponse } from './types';
 const links = [
   httpBatchLink({
     fetch: async (input, init) => {
+      if (isDesktop) {
+        const { desktopRemoteRPCFetch } = await import('./helpers/desktopRemoteRPCFetch');
+
+        const res = await desktopRemoteRPCFetch(input as string, init);
+
+        if (res) return res;
+      }
+
       const response = await fetch(input, init);
+
       if (response.ok) return response;
 
       const errorRes: ErrorResponse = await response.clone().json();
 
+      const { loginRequired } = await import('@/components/Error/loginRequiredNotification');
+      const { fetchErrorNotification } = await import('@/components/Error/fetchErrorNotification');
+
       errorRes.forEach((item) => {
         const errorData = item.error.json;
-
         const status = errorData.data.httpStatus;
 
         switch (status) {

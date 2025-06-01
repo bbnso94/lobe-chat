@@ -11,7 +11,6 @@ import { UploadFileItem } from '@/types/files/upload';
 
 import UploadDetail from '../../../components/UploadDetail';
 import Content from './Content';
-import { FILE_ITEM_SIZE } from './style';
 
 const useStyles = createStyles(({ css, token }) => ({
   actions: css`
@@ -20,8 +19,9 @@ const useStyles = createStyles(({ css, token }) => ({
     inset-block-start: -4px;
     inset-inline-end: -4px;
 
-    background: ${token.colorBgElevated};
     border-radius: 5px;
+
+    background: ${token.colorBgElevated};
     box-shadow:
       0 0 0 0.5px ${token.colorFillSecondary} inset,
       ${token.boxShadowTertiary};
@@ -29,12 +29,15 @@ const useStyles = createStyles(({ css, token }) => ({
   container: css`
     position: relative;
 
-    width: ${FILE_ITEM_SIZE}px;
-    min-width: ${FILE_ITEM_SIZE}px;
-    height: ${FILE_ITEM_SIZE}px;
+    width: 180px;
+    height: 64px;
+    border-radius: 8px;
 
     background: ${token.colorBgContainer};
-    border-radius: 8px;
+
+    :hover {
+      background: ${token.colorBgElevated};
+    }
   `,
   image: css`
     margin-block: 0 !important;
@@ -49,8 +52,6 @@ const useStyles = createStyles(({ css, token }) => ({
 
 type FileItemProps = UploadFileItem;
 
-const spacing = 8;
-
 const FileItem = memo<FileItemProps>((props) => {
   const { file, uploadState, status, id, tasks } = props;
   const { t } = useTranslation(['chat', 'common']);
@@ -58,12 +59,12 @@ const FileItem = memo<FileItemProps>((props) => {
   const [removeChatUploadFile] = useFileStore((s) => [s.removeChatUploadFile]);
 
   return (
-    <Flexbox className={styles.container} distribution={'space-between'}>
-      <Center flex={1} height={FILE_ITEM_SIZE - 46} padding={spacing}>
+    <Flexbox align={'center'} className={styles.container} horizontal>
+      <Center flex={1} height={64} padding={4} style={{ maxWidth: 64 }}>
         <Content {...props} />
       </Center>
-      <Flexbox gap={4} style={{ paddingBottom: 4, paddingInline: spacing }}>
-        <Typography.Text ellipsis={{ tooltip: true }} style={{ fontSize: 12 }}>
+      <Flexbox flex={1} gap={4} style={{ paddingBottom: 4, paddingInline: 4 }}>
+        <Typography.Text ellipsis={{ tooltip: true }} style={{ fontSize: 12, maxWidth: 100 }}>
           {file.name}
         </Typography.Text>
 

@@ -1,4 +1,5 @@
-import { ActionIcon, DiscordIcon, Icon } from '@lobehub/ui';
+import { Hotkey, Icon } from '@lobehub/ui';
+import { DiscordIcon } from '@lobehub/ui/icons';
 import { Badge } from 'antd';
 import { ItemType } from 'antd/es/menu/interface';
 import {
@@ -9,22 +10,22 @@ import {
   Feather,
   FileClockIcon,
   HardDriveDownload,
-  HardDriveUpload,
   LifeBuoy,
   LogOut,
   Mail,
-  Maximize,
   Settings2,
 } from 'lucide-react';
 import Link from 'next/link';
 import { PropsWithChildren, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Flexbox } from 'react-layout-kit';
-import urlJoin from 'url-join';
 
 import type { MenuProps } from '@/components/Menu';
+import { enableAuth } from '@/const/auth';
 import { LOBE_CHAT_CLOUD } from '@/const/branding';
+import { DEFAULT_HOTKEY_CONFIG } from '@/const/settings';
 import {
+  CHANGELOG,
   DISCORD,
   DOCUMENTS_REFER_URL,
   EMAIL_SUPPORT,
@@ -33,13 +34,9 @@ import {
   UTM_SOURCE,
   mailTo,
 } from '@/const/url';
-import { isServerMode } from '@/const/version';
+import { isDesktop } from '@/const/version';
 import DataImporter from '@/features/DataImporter';
-import { useOpenSettings } from '@/hooks/useInterceptingRoutes';
 import { usePWAInstall } from '@/hooks/usePWAInstall';
-import { useQueryRoute } from '@/hooks/useQueryRoute';
-import { configService } from '@/services/config';
-import { SettingsTabs } from '@/store/global/initialState';
 import { featureFlagsSelectors, useServerConfigStore } from '@/store/serverConfig';
 import { useUserStore } from '@/store/user';
 import { authSelectors } from '@/store/user/selectors';
@@ -51,7 +48,7 @@ const NewVersionBadge = memo(
     children,
     showBadge,
     onClick,
-  }: PropsWithChildren & { onClick: () => void; showBadge?: boolean }) => {
+  }: PropsWithChildren & { onClick?: () => void; showBadge?: boolean }) => {
     const { t } = useTranslation('common');
     if (!showBadge)
       return (
@@ -69,44 +66,36 @@ const NewVersionBadge = memo(
 );
 
 export const useMenu = () => {
-  const router = useQueryRoute();
   const { canInstall, install } = usePWAInstall();
   const hasNewVersion = useNewVersion();
-  const openSettings = useOpenSettings();
   const { t } = useTranslation(['common', 'setting', 'auth']);
   const { showCloudPromotion, hideDocs } = useServerConfigStore(featureFlagsSelectors);
-  const [isLogin, isLoginWithAuth, isLoginWithClerk, openUserProfile] = useUserStore((s) => [
+  const [isLogin, isLoginWithAuth] = useUserStore((s) => [
     authSelectors.isLogin(s),
     authSelectors.isLoginWithAuth(s),
-    authSelectors.isLoginWithClerk(s),
-    s.openUserProfile,
   ]);
 
   const profile: MenuProps['items'] = [
     {
       icon: <Icon icon={CircleUserRound} />,
       key: 'profile',
-      label: t('userPanel.profile'),
-      onClick: () => openUserProfile(),
+      label: <Link href={'/profile'}>{t('userPanel.profile')}</Link>,
     },
   ];
 
   const settings: MenuProps['items'] = [
     {
-      extra: (
-        <ActionIcon
-          icon={Maximize}
-          onClick={() => router.push(urlJoin('/settings', SettingsTabs.Common))}
-          size={'small'}
-          title={t('fullscreen')}
-        />
-      ),
+      extra: isDesktop ? (
+        <div>
+          <Hotkey keys={DEFAULT_HOTKEY_CONFIG.openSettings} />
+        </div>
+      ) : undefined,
       icon: <Icon icon={Settings2} />,
       key: 'setting',
       label: (
-        <NewVersionBadge onClick={openSettings} showBadge={hasNewVersion}>
-          {t('userPanel.setting')}
-        </NewVersionBadge>
+        <Link href={'/settings/common'}>
+          <NewVersionBadge showBadge={hasNewVersion}>{t('userPanel.setting')}</NewVersionBadge>
+        </Link>
       ),
     },
     {
@@ -136,40 +125,8 @@ export const useMenu = () => {
         {
           icon: <Icon icon={HardDriveDownload} />,
           key: 'import',
-          label: <DataImporter>{t('import')}</DataImporter>,
+          label: <DataImporter>{t('importData')}</DataImporter>,
         },
-        isServerMode
-          ? null
-          : {
-              children: [
-                {
-                  key: 'allAgent',
-                  label: t('exportType.allAgent'),
-                  onClick: configService.exportAgents,
-                },
-                {
-                  key: 'allAgentWithMessage',
-                  label: t('exportType.allAgentWithMessage'),
-                  onClick: configService.exportSessions,
-                },
-                {
-                  key: 'globalSetting',
-                  label: t('exportType.globalSetting'),
-                  onClick: configService.exportSettings,
-                },
-                {
-                  type: 'divider',
-                },
-                {
-                  key: 'all',
-                  label: t('exportType.all'),
-                  onClick: configService.exportAll,
-                },
-              ],
-              icon: <Icon icon={HardDriveUpload} />,
-              key: 'export',
-              label: t('export'),
-            },
         {
           type: 'divider',
         },
@@ -188,7 +145,7 @@ export const useMenu = () => {
     {
       icon: <Icon icon={FileClockIcon} />,
       key: 'changelog',
-      label: <Link href={'/changelog/modal'}>{t('changelog')}</Link>,
+      label: <Link href={isDesktop ? CHANGELOG : '/changelog/modal'}>{t('changelog')}</Link>,
     },
     {
       children: [
@@ -242,7 +199,7 @@ export const useMenu = () => {
     {
       type: 'divider',
     },
-    ...(isLoginWithClerk ? profile : []),
+    ...(!enableAuth || (enableAuth && isLoginWithAuth) ? profile : []),
     ...(isLogin ? settings : []),
     /* ↓ cloud slot ↓ */
 

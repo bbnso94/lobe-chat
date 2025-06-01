@@ -1,8 +1,8 @@
 import { clientDB } from '@/database/client/db';
+import { MessageModel } from '@/database/models/message';
+import { SessionModel } from '@/database/models/session';
+import { UserModel } from '@/database/models/user';
 import { users } from '@/database/schemas';
-import { MessageModel } from '@/database/server/models/message';
-import { SessionModel } from '@/database/server/models/session';
-import { UserModel } from '@/database/server/models/user';
 import { BaseClientService } from '@/services/baseClientService';
 import { UserPreference } from '@/types/user';
 import { AsyncLocalStorage } from '@/utils/localStorage';
@@ -27,6 +27,10 @@ export class ClientService extends BaseClientService implements IUserService {
     this.preferenceStorage = new AsyncLocalStorage('LOBE_PREFERENCE');
   }
 
+  getUserRegistrationDuration: IUserService['getUserRegistrationDuration'] = async () => {
+    return this.userModel.getUserRegistrationDuration();
+  };
+
   getUserState: IUserService['getUserState'] = async () => {
     // if user not exist in the db, create one to make sure the user exist
     await this.makeSureUserExist();
@@ -35,19 +39,31 @@ export class ClientService extends BaseClientService implements IUserService {
       encryptKeyVaultsStr ? JSON.parse(encryptKeyVaultsStr) : {},
     );
 
-    const user = await UserModel.findById(clientDB as any, this.userId);
     const messageCount = await this.messageModel.count();
     const sessionCount = await this.sessionModel.count();
 
     return {
       ...state,
-      avatar: user?.avatar as string,
+      avatar: state.avatar ?? '',
       canEnablePWAGuide: messageCount >= 4,
       canEnableTrace: messageCount >= 4,
+      firstName: state.firstName,
+      fullName: state.fullName,
       hasConversation: messageCount > 0 || sessionCount > 0,
       isOnboard: true,
+      lastName: state.lastName,
       preference: await this.preferenceStorage.getFromLocalStorage(),
+      username: state.username,
     };
+  };
+
+  getUserSSOProviders: IUserService['getUserSSOProviders'] = async () => {
+    // Account not exist on next-auth in client mode, no need to implement this method
+    return [];
+  };
+
+  unlinkSSOProvider: IUserService['unlinkSSOProvider'] = async () => {
+    // Account not exist on next-auth in client mode, no need to implement this method
   };
 
   updateUserSettings: IUserService['updateUserSettings'] = async (value) => {

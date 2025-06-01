@@ -1,8 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { DEFAULT_AGENT_CONFIG } from '@/const/settings';
 import { lambdaClient } from '@/libs/trpc/client';
-import { useUserStore } from '@/store/user';
-import { authSelectors } from '@/store/user/selectors';
 
 import { ISessionService } from './type';
 
@@ -36,8 +33,12 @@ export class ServerService implements ISessionService {
     return lambdaClient.session.getGroupedSessions.query();
   };
 
-  countSessions: ISessionService['countSessions'] = () => {
-    return lambdaClient.session.countSessions.query();
+  countSessions: ISessionService['countSessions'] = async (params) => {
+    return lambdaClient.session.countSessions.query(params);
+  };
+
+  rankSessions: ISessionService['rankSessions'] = async (limit) => {
+    return lambdaClient.session.rankSessions.query(limit);
   };
 
   updateSession: ISessionService['updateSession'] = (id, data) => {
@@ -51,9 +52,6 @@ export class ServerService implements ISessionService {
   // TODO: Need to be fixed
   // @ts-ignore
   getSessionConfig: ISessionService['getSessionConfig'] = async (id) => {
-    const isLogin = authSelectors.isLogin(useUserStore.getState());
-    if (!isLogin) return DEFAULT_AGENT_CONFIG;
-
     return lambdaClient.agent.getAgentConfig.query({ sessionId: id });
   };
 

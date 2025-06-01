@@ -1,6 +1,7 @@
 import { uniqBy } from 'lodash-es';
 
 import { filterEnabledModels } from '@/config/modelProviders';
+import { EnabledProviderWithModels } from '@/types/aiProvider';
 import { ChatModelCard, ModelProviderCard } from '@/types/llm';
 import { ServerModelProviderConfig } from '@/types/serverConfig';
 import { GlobalLLMProviderKey } from '@/types/user/settings';
@@ -88,18 +89,32 @@ const getEnableModelsById = (provider: string) => (s: UserStore) => {
 
 const modelProviderList = (s: UserStore): ModelProviderCard[] => s.modelProviderList;
 
-const modelProviderListForModelSelect = (s: UserStore): ModelProviderCard[] =>
+const modelProviderListForModelSelect = (s: UserStore): EnabledProviderWithModels[] =>
   modelProviderList(s)
     .filter((s) => s.enabled)
     .map((provider) => ({
       ...provider,
-      chatModels: provider.chatModels.filter((model) => model.enabled),
+      children: provider.chatModels
+        .filter((model) => model.enabled)
+        .map((m) => ({
+          abilities: {
+            functionCall: m.functionCall,
+            vision: m.vision,
+          },
+          contextWindowTokens: m.contextWindowTokens,
+          displayName: m.displayName,
+          id: m.id,
+        })),
+      source: 'builtin',
     }));
 
-const getModelCardById = (id: string) => (s: UserStore) => {
+const getModelCardById = (id: string, provider?: GlobalLLMProviderKey) => (s: UserStore) => {
   const list = modelProviderList(s);
 
-  return list.flatMap((i) => i.chatModels).find((m) => m.id === id);
+  return list
+    .filter((i) => !provider || i.id === provider)
+    .flatMap((i) => i.chatModels)
+    .find((m) => m.id === id);
 };
 
 const isModelEnabledFunctionCall = (id: string) => (s: UserStore) =>
@@ -109,6 +124,9 @@ const isModelEnabledFunctionCall = (id: string) => (s: UserStore) =>
 // refs: https://github.com/lobehub/lobe-chat/issues/790
 const isModelEnabledVision = (id: string) => (s: UserStore) =>
   getModelCardById(id)(s)?.vision || id.includes('vision');
+
+const isModelEnabledReasoning = (id: string) => (s: UserStore) =>
+  getModelCardById(id)(s)?.reasoning || false;
 
 const isModelEnabledFiles = (id: string) => (s: UserStore) => getModelCardById(id)(s)?.files;
 
@@ -132,6 +150,7 @@ export const modelProviderSelectors = {
   getModelCardsById,
   isModelEnabledFiles,
   isModelEnabledFunctionCall,
+  isModelEnabledReasoning,
   isModelEnabledUpload,
   isModelEnabledVision,
   isModelHasMaxToken,

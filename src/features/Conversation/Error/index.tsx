@@ -1,4 +1,4 @@
-import { IPluginErrorType, PluginErrorType } from '@lobehub/chat-plugin-sdk';
+import { IPluginErrorType } from '@lobehub/chat-plugin-sdk';
 import type { AlertProps } from '@lobehub/ui';
 import { Skeleton } from 'antd';
 import dynamic from 'next/dynamic';
@@ -6,7 +6,7 @@ import { Suspense, memo, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { useProviderName } from '@/hooks/useProviderName';
-import { AgentRuntimeErrorType, ILobeAgentRuntimeErrorType } from '@/libs/agent-runtime';
+import { AgentRuntimeErrorType, ILobeAgentRuntimeErrorType } from '@/libs/model-runtime';
 import { ChatErrorType, ErrorType } from '@/types/fetch';
 import { ChatMessage, ChatMessageError } from '@/types/message';
 
@@ -14,12 +14,16 @@ import ClerkLogin from './ClerkLogin';
 import ErrorJsonViewer from './ErrorJsonViewer';
 import InvalidAPIKey from './InvalidAPIKey';
 import InvalidAccessCode from './InvalidAccessCode';
-import OpenAiBizError from './OpenAiBizError';
+import { ErrorActionContainer } from './style';
 
 const loading = () => <Skeleton active />;
 
 const OllamaBizError = dynamic(() => import('./OllamaBizError'), { loading, ssr: false });
-const PluginSettings = dynamic(() => import('./PluginSettings'), { loading, ssr: false });
+
+const OllamaSetupGuide = dynamic(() => import('@/features/OllamaSetupGuide'), {
+  loading,
+  ssr: false,
+});
 
 // Config for the errorMessage display
 const getErrorAlertConfig = (
@@ -33,15 +37,24 @@ const getErrorAlertConfig = (
       type: 'warning',
     };
 
+  /* ↓ cloud slot ↓ */
+
+  /* ↑ cloud slot ↑ */
+
   switch (errorType) {
+    case ChatErrorType.SystemTimeNotMatchError:
     case AgentRuntimeErrorType.PermissionDenied:
+    case AgentRuntimeErrorType.InsufficientQuota:
+    case AgentRuntimeErrorType.ModelNotFound:
     case AgentRuntimeErrorType.QuotaLimitReached:
+    case AgentRuntimeErrorType.ExceededContextWindow:
     case AgentRuntimeErrorType.LocationNotSupportError: {
       return {
         type: 'warning',
       };
     }
 
+    case AgentRuntimeErrorType.OllamaServiceUnavailable:
     case AgentRuntimeErrorType.NoOpenAIAPIKey: {
       return {
         extraDefaultExpand: true,
@@ -78,17 +91,17 @@ const ErrorMessageExtra = memo<{ data: ChatMessage }>(({ data }) => {
   if (!error?.type) return;
 
   switch (error.type) {
-    case PluginErrorType.PluginSettingsInvalid: {
-      return <PluginSettings id={data.id} plugin={data.plugin} />;
-    }
-
-    case AgentRuntimeErrorType.OpenAIBizError: {
-      return <OpenAiBizError {...data} />;
+    case AgentRuntimeErrorType.OllamaServiceUnavailable: {
+      return <OllamaSetupGuide id={data.id} />;
     }
 
     case AgentRuntimeErrorType.OllamaBizError: {
       return <OllamaBizError {...data} />;
     }
+
+    /* ↓ cloud slot ↓ */
+
+    /* ↑ cloud slot ↑ */
 
     case ChatErrorType.InvalidClerkUser: {
       return <ClerkLogin id={data.id} />;
@@ -113,7 +126,13 @@ const ErrorMessageExtra = memo<{ data: ChatMessage }>(({ data }) => {
 });
 
 export default memo<{ data: ChatMessage }>(({ data }) => (
-  <Suspense fallback={<Skeleton active style={{ width: '100%' }} />}>
+  <Suspense
+    fallback={
+      <ErrorActionContainer>
+        <Skeleton active style={{ width: '100%' }} />
+      </ErrorActionContainer>
+    }
+  >
     <ErrorMessageExtra data={data} />
   </Suspense>
 ));

@@ -1,11 +1,17 @@
 /* eslint-disable sort-keys-fix/sort-keys-fix */
-import { ILobeAgentRuntimeErrorType } from '@/libs/agent-runtime';
+import { ILobeAgentRuntimeErrorType } from '@/libs/model-runtime';
 
 export const ChatErrorType = {
   // ******* 业务错误语义 ******* //
 
   InvalidAccessCode: 'InvalidAccessCode', // is in valid password
   InvalidClerkUser: 'InvalidClerkUser', // is not Clerk User
+  FreePlanLimit: 'FreePlanLimit', // is not Clerk User
+  SubscriptionPlanLimit: 'SubscriptionPlanLimit', // 订阅用户超限
+  SubscriptionKeyMismatch: 'SubscriptionKeyMismatch', // 订阅 key 不匹配
+
+  InvalidUserKey: 'InvalidUserKey', // is not valid User key
+  CreateMessageError: 'CreateMessageError',
   /**
    * @deprecated
    */
@@ -13,6 +19,7 @@ export const ChatErrorType = {
   OllamaServiceUnavailable: 'OllamaServiceUnavailable', // 未启动/检测到 Ollama 服务
   PluginFailToTransformArguments: 'PluginFailToTransformArguments',
   UnknownChatFetchError: 'UnknownChatFetchError',
+  SystemTimeNotMatchError: 'SystemTimeNotMatchError',
 
   // ******* 客户端错误 ******* //
   BadRequest: 400,

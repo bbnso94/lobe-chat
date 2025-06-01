@@ -1,4 +1,5 @@
-import { Icon, MobileTabBar, type MobileTabBarProps } from '@lobehub/ui';
+import { Icon } from '@lobehub/ui';
+import { TabBar, type TabBarProps } from '@lobehub/ui/mobile';
 import { createStyles } from 'antd-style';
 import { Bot, MessageSquare, User } from 'lucide-react';
 import { useRouter } from 'next/navigation';
@@ -6,7 +7,6 @@ import { rgba } from 'polished';
 import { memo, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { useOpenSettings } from '@/hooks/useInterceptingRoutes';
 import { SidebarTabKey } from '@/store/global/initialState';
 import { featureFlagsSelectors, useServerConfigStore } from '@/store/serverConfig';
 
@@ -26,11 +26,13 @@ interface Props {
 export default memo<Props>(({ className, tabBarKey }) => {
   const { t } = useTranslation('common');
   const { styles } = useStyles();
-  const openSettings = useOpenSettings();
   const router = useRouter();
+  const openSettings = () => {
+    router.push('/settings/llm');
+  };
   const { showMarket } = useServerConfigStore(featureFlagsSelectors);
 
-  const items: MobileTabBarProps['items'] = useMemo(
+  const items: TabBarProps['items'] = useMemo(
     () =>
       [
         {
@@ -61,9 +63,9 @@ export default memo<Props>(({ className, tabBarKey }) => {
           onClick: openSettings,
           title: t('tab.setting'),
         },
-      ].filter(Boolean) as MobileTabBarProps['items'],
+      ].filter(Boolean) as TabBarProps['items'],
     [t],
   );
 
-  return <MobileTabBar activeKey={tabBarKey} className={className} items={items} safeArea />;
+  return <TabBar activeKey={tabBarKey} className={className} items={items} safeArea />;
 });

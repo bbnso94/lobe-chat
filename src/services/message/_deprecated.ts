@@ -10,6 +10,7 @@ import {
   ChatTTS,
   ChatTranslate,
   CreateMessageParams,
+  ModelRankItem,
 } from '@/types/message';
 
 import { IMessageService } from './type';
@@ -54,6 +55,21 @@ export class ClientService implements IMessageService {
 
   async countMessages() {
     return MessageModel.count();
+  }
+
+  // @ts-ignore
+  async rankModels(): Promise<ModelRankItem[]> {
+    throw new Error('Method not implemented.');
+  }
+
+  // @ts-ignore
+  async countWords(): Promise<number> {
+    throw new Error('Method not implemented.');
+  }
+
+  // @ts-ignore
+  async getHeatmaps() {
+    throw new Error('Method not implemented.');
   }
 
   async countTodayMessages() {
@@ -122,5 +138,9 @@ export class ClientService implements IMessageService {
   async messageCountToCheckTrace() {
     const number = await this.countMessages();
     return number >= 4;
+  }
+
+  async updateMessagePluginError() {
+    throw new Error('Method not implemented.');
   }
 }
